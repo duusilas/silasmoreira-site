@@ -7,6 +7,9 @@
 <meta name="description" content="Leilões digitais de veículos usados: como ligar pesquisa, informação e experiência de compra em diferentes mercados. Caso de produto de Silas Moreira.">
 <link rel="canonical" href="https://silasmoreira.tech/casos/pesquisa-leiloes-digitais/">
 <link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/casos/pesquisa-leiloes-digitais/">
+<link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/casos/pesquisa-leiloes-digitais/">
+<link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/casos/pesquisa-leiloes-digitais/">
+<link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/casos/pesquisa-leiloes-digitais/">
 <link rel="alternate" hreflang="x-default" href="https://silasmoreira.tech/casos/pesquisa-leiloes-digitais/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Silas Moreira">
@@ -38,7 +41,7 @@
   <div class="wrap">
     <a class="logo" href="/" aria-label="Silas Moreira, página inicial"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#1F2BFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="190 49" transform="rotate(-8 50 50)"/><circle cx="50" cy="50" r="15" fill="#0A1250"/><circle cx="50" cy="50" r="5" fill="#FF2E93"/><circle cx="76.9" cy="23.1" r="10" fill="#2BFF88"/></svg>Silas Moreira</a>
     <nav class="nav" aria-label="Principal"><a href="/">Início</a><a href="/palestras/">Em palco</a><a href="/sobre/#trajetoria">O meu percurso</a><a href="/partilhas/">Partilhas</a><a href="/recursos/" aria-current="page">Laboratório</a><a class="nav-cta" href="/contacto/">Contacto</a></nav>
-    
+    <div class="langs" aria-label="Idioma"><a class="lang on" aria-current="true" lang="pt-PT">PT</a><a class="lang" href="/en/casos/pesquisa-leiloes-digitais/" hreflang="en" lang="en">EN</a><a class="lang" href="/es/casos/pesquisa-leiloes-digitais/" hreflang="es" lang="es">ES</a><a class="lang" href="/zh/casos/pesquisa-leiloes-digitais/" hreflang="zh" lang="zh">中文</a></div>
     <button class="menu-btn" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span></button>
   </div>
 </header>
@@ -104,7 +107,7 @@
 
 <footer class="foot">
   <div class="wrap">
-    <span class="foot-brand">'+LOGO+'<span>© <span data-year>2026</span> Silas Moreira, Porto</span></span>
+    <span class="foot-brand"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#1F2BFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="190 49" transform="rotate(-8 50 50)"/><circle cx="50" cy="50" r="15" fill="#0A1250"/><circle cx="50" cy="50" r="5" fill="#FF2E93"/><circle cx="76.9" cy="23.1" r="10" fill="#2BFF88"/></svg><span>© <span data-year>2026</span> Silas Moreira, Porto</span></span>
     <nav aria-label="Rodapé">
       <a href="/palestras/">Palestras</a><a href="/sobre/">Sobre</a><a href="/partilhas/">Partilhas</a><a href="/recursos/">Laboratório</a><a href="/contacto/">Contacto</a>
       <a href="https://www.linkedin.com/in/silasmoreira/" rel="noopener" target="_blank">LinkedIn</a>
@@ -137,6 +140,13 @@
 
 <script src="/assets/site.js" defer></script>
 <script>{
+  const X = Object.assign({
+    found1:' veículo encontrado', foundN:' veículos encontrados', inCmp:' em comparação', remove:'Remover da comparação', compare:'Comparar',
+    empty:'Nenhum veículo com estes critérios. Tira um filtro ou', emptyBtn:'limpa os critérios', note:'As diferenças aparecem a verde.', gear:'caixa',
+    attr:'Atributo', tipo:'Tipo', mot:'Motorização', ano:'Ano', km:'Quilómetros', cx:'Caixa'
+  }, window.VEH_TXT || {});
+  const D = window.VEH_DL || {};
+  const t = v => D[v] || v;
   const data=[
     {n:'Compacto urbano A',tipo:'Compacto',mot:'Gasolina',ano:2021,km:'38 000 km',cx:'Manual'},
     {n:'Compacto urbano B',tipo:'Compacto',mot:'Elétrico',ano:2022,km:'21 000 km',cx:'Automática'},
@@ -147,18 +157,18 @@
     {n:'SUV elétrico A',tipo:'SUV',mot:'Elétrico',ano:2023,km:'12 000 km',cx:'Automática'},
     {n:'SUV B',tipo:'SUV',mot:'Híbrido',ano:2021,km:'63 000 km',cx:'Automática'},
     {n:'SUV C',tipo:'SUV',mot:'Diesel',ano:2019,km:'128 000 km',cx:'Manual'}];
-  const L={tipo:'Tipo',mot:'Motorização',ano:'Ano',km:'Quilómetros',cx:'Caixa'};
+  const L={tipo:X.tipo,mot:X.mot,ano:X.ano,km:X.km,cx:X.cx};
   const root=document.getElementById('vdemo');
   if(root){
     const grid=root.querySelector('.vgrid'),status=root.querySelector('.status'),cmp=root.querySelector('.compare');
     const f={tipo:new Set(),mot:new Set()}; let sel=[];
     const draw=()=>{
       const list=data.filter(v=>(!f.tipo.size||f.tipo.has(v.tipo))&&(!f.mot.size||f.mot.has(v.mot)));
-      status.textContent=list.length+(list.length===1?' veículo encontrado':' veículos encontrados')+(sel.length?', '+sel.length+' em comparação':'');
-      grid.innerHTML=list.length?list.map(v=>{const on=sel.includes(v.n);return `<div class="vcard${on?' sel':''}"><h4>${v.n}</h4><div class="attrs"><i>${v.tipo}</i><i>${v.mot}</i><i>${v.ano}</i></div><span class="vkm">${v.km}, caixa ${v.cx.toLowerCase()}</span><button type="button" data-n="${v.n}" aria-pressed="${on}">${on?'Remover da comparação':'Comparar'}</button></div>`}).join(''):'<div class="empty">Nenhum veículo com estes critérios. Tira um filtro ou <button type="button" class="fchip clear" data-clear>limpa os critérios</button>.</div>';
+      status.textContent=list.length+(list.length===1?X.found1:X.foundN)+(sel.length?', '+sel.length+X.inCmp:'');
+      grid.innerHTML=list.length?list.map(v=>{const on=sel.includes(v.n);return `<div class="vcard${on?' sel':''}"><h4>${t(v.n)}</h4><div class="attrs"><i>${t(v.tipo)}</i><i>${t(v.mot)}</i><i>${v.ano}</i></div><span class="vkm">${v.km}, ${X.gear} ${t(v.cx).toLowerCase()}</span><button type="button" data-n="${v.n}" aria-pressed="${on}">${on?X.remove:X.compare}</button></div>`}).join(''):`<div class="empty">${X.empty} <button type="button" class="fchip clear" data-clear>${X.emptyBtn}</button>.</div>`;
       const s=data.filter(v=>sel.includes(v.n));
       cmp.classList.toggle('show',s.length===2);
-      cmp.innerHTML=s.length===2?`<table><tr><th>Atributo</th><th>${s[0].n}</th><th>${s[1].n}</th></tr>${Object.keys(L).map(k=>{const d=s[0][k]!==s[1][k];return `<tr${d?' class="diff"':''}><td>${L[k]}</td><td>${s[0][k]}</td><td>${s[1][k]}</td></tr>`}).join('')}</table><p class="cmp-note">As diferenças aparecem a verde.</p>`:'';
+      cmp.innerHTML=s.length===2?`<table><tr><th>${X.attr}</th><th>${t(s[0].n)}</th><th>${t(s[1].n)}</th></tr>${Object.keys(L).map(k=>{const d=s[0][k]!==s[1][k];const a=k==='ano'||k==='km'?s[0][k]:t(s[0][k]),b=k==='ano'||k==='km'?s[1][k]:t(s[1][k]);return `<tr${d?' class="diff"':''}><td>${L[k]}</td><td>${a}</td><td>${b}</td></tr>`}).join('')}</table><p class="cmp-note">${X.note}</p>`:'';
     };
     root.addEventListener('click',e=>{
       const c=e.target.closest('[data-f]'),cl=e.target.closest('[data-clear]'),b=e.target.closest('[data-n]');

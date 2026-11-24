@@ -8,6 +8,13 @@
     get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   };
+  const LANG = (document.documentElement.lang || 'pt').slice(0, 2);
+  const TXT = ({
+    pt: { open: 'Abrir menu', close: 'Fechar menu', copied: 'Copiado' },
+    en: { open: 'Open menu', close: 'Close menu', copied: 'Copied' },
+    es: { open: 'Abrir menú', close: 'Cerrar menú', copied: 'Copiado' },
+    zh: { open: '打开菜单', close: '关闭菜单', copied: '已复制' }
+  })[LANG] || {};
   const toastEl = document.createElement('div'); toastEl.className = 'toast'; toastEl.setAttribute('role', 'status'); document.body.appendChild(toastEl);
   let toastT; const toast = msg => { toastEl.textContent = msg; toastEl.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove('show'), 2400); };
 
@@ -24,10 +31,10 @@
   const mb = $('.menu-btn');
   mb && mb.addEventListener('click', () => {
     const open = top.classList.toggle('open');
-    mb.setAttribute('aria-expanded', open); mb.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    mb.setAttribute('aria-expanded', open); mb.setAttribute('aria-label', open ? TXT.close : TXT.open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
-  const closeMenu = () => { if (!top || !top.classList.contains('open')) return; top.classList.remove('open'); document.body.style.overflow = ''; mb && (mb.setAttribute('aria-expanded', 'false'), mb.setAttribute('aria-label', 'Abrir menu')); };
+  const closeMenu = () => { if (!top || !top.classList.contains('open')) return; top.classList.remove('open'); document.body.style.overflow = ''; mb && (mb.setAttribute('aria-expanded', 'false'), mb.setAttribute('aria-label', TXT.open)); };
   $$('.nav a').forEach(a => a.addEventListener('click', closeMenu));
   addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
   addEventListener('resize', () => { if (innerWidth > 960) closeMenu(); });
@@ -141,7 +148,7 @@
 
   /* copiar */
   $$('[data-copy]').forEach(b => b.addEventListener('click', async () => {
-    try { await navigator.clipboard.writeText(b.dataset.copy); toast(b.dataset.done || 'Copiado'); }
+    try { await navigator.clipboard.writeText(b.dataset.copy); toast(b.dataset.done || TXT.copied); }
     catch (e) { toast(b.dataset.copy); }
   }));
 
@@ -163,12 +170,8 @@
   }));
   $$('[data-open-consent]').forEach(b => b.addEventListener('click', () => consent && consent.classList.add('show')));
 
-  /* idioma */
-  const lang = store.get('sm-lang') || 'pt';
-  $$('.langs button').forEach(b => {
-    b.setAttribute('aria-pressed', b.dataset.lang === lang);
-    b.addEventListener('click', () => { store.set('sm-lang', b.dataset.lang); $$('.langs button').forEach(x => x.setAttribute('aria-pressed', x === b)); if (b.dataset.lang !== 'pt') toast('Versão neste idioma em preparação'); });
-  });
+  /* idioma: guarda a escolha ao mudar */
+  $$('.langs a[hreflang]').forEach(a => a.addEventListener('click', () => store.set('sm-lang', a.getAttribute('hreflang'))));
 
   /* formulário: assunto a partir do link e envio */
   const sel = $('#assunto');

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es" data-umami="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El problema antes que la feature — guía de product discovery de Silas Moreira</title>
+<meta name="description" content="Entre una petición y una decisión de producto hay descubrimiento: llegar al problema, a la hipótesis y a una prueba útil. Seis preguntas para tu equipo.">
+<link rel="canonical" href="https://silasmoreira.tech/es/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="x-default" href="https://silasmoreira.tech/artigos/da-feature-ao-problema/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Silas Moreira">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Silas Moreira">
+<meta property="og:title" content="El problema antes que la feature — guía de product discovery de Silas Moreira">
+<meta property="og:description" content="Entre una petición y una decisión de producto hay descubrimiento: llegar al problema, a la hipótesis y a una prueba útil. Seis preguntas para tu equipo.">
+<meta property="og:url" content="https://silasmoreira.tech/es/artigos/da-feature-ao-problema/">
+<meta property="og:image" content="https://silasmoreira.tech/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Silas Moreira — Conectar ideas, personas y perspectivas.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "El problema antes que la feature.", "datePublished": "2026-11-08", "author": {"@id": "https://silasmoreira.tech/#silas"}, "inLanguage": "es", "url": "https://silasmoreira.tech/es/artigos/da-feature-ao-problema/", "timeRequired": "PT6M"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://silasmoreira.tech/es/"}, {"@type": "ListItem", "position": 2, "name": "Laboratorio", "item": "https://silasmoreira.tech/es/recursos/"}, {"@type": "ListItem", "position": 3, "name": "El problema antes que la feature", "item": "https://silasmoreira.tech/es/artigos/da-feature-ao-problema/"}]}]}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/es/" aria-label="Silas Moreira, página de inicio"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#1F2BFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="190 49" transform="rotate(-8 50 50)"/><circle cx="50" cy="50" r="15" fill="#0A1250"/><circle cx="50" cy="50" r="5" fill="#FF2E93"/><circle cx="76.9" cy="23.1" r="10" fill="#2BFF88"/></svg>Silas Moreira</a>
+    <nav class="nav" aria-label="Principal"><a href="/es/">Inicio</a><a href="/es/palestras/">En el escenario</a><a href="/es/sobre/#trajetoria">Mi trayectoria</a><a href="/es/partilhas/">Publicaciones</a><a href="/es/recursos/" aria-current="page">Laboratorio</a><a class="nav-cta" href="/es/contacto/">Contacto</a></nav>
+    <div class="langs" aria-label="Idioma"><a class="lang" href="/artigos/da-feature-ao-problema/" hreflang="pt" lang="pt-PT">PT</a><a class="lang" href="/en/artigos/da-feature-ao-problema/" hreflang="en" lang="en">EN</a><a class="lang on" aria-current="true" lang="es">ES</a><a class="lang" href="/zh/artigos/da-feature-ao-problema/" hreflang="zh" lang="zh-Hans">中文</a></div>
+    <button class="menu-btn" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+
+  <div class="read-progress" aria-hidden="true"></div>
+  <section class="article-hero tech-bg" aria-labelledby="h1">
+    <span class="glow g1" aria-hidden="true" style="opacity:.22"></span>
+    <div class="wrap">
+      <p class="crumbs"><a href="/es/">Inicio</a> / <a href="/es/recursos/">Laboratorio</a> / Nadie Pidió Esa Feature</p>
+      <h1 id="h1">El problema antes que la feature.</h1>
+      <p class="lede">Entre una petición y una decisión de producto hay un trabajo de descubrimiento: llegar al problema, a la hipótesis y a una prueba útil.</p>
+      <p class="meta"><span>Silas Moreira</span><time datetime="2026-11-08">8 nov 2026</time><span>6 min de lectura</span></p>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:2rem">
+    <div class="wrap read">
+      <p>Peticiones como "más filtros" o "un dashboard" suelen llegar ya con forma de solución. Es comprensible: es más fácil imaginar una solución que describir una dificultad.</p>
+      <blockquote>"Necesitamos un filtro nuevo."</blockquote>
+      <p>El trabajo de producto empieza cuando creamos espacio entre la petición y la decisión de construir. ¿Quién necesita qué? ¿Qué se lo impide? ¿Qué evidencia existe? ¿Qué cambiaría si el problema se resolviera?</p>
+      <h2>Una petición puede esconder problemas distintos.</h2>
+      <div data-tabs class="ex-tabs">
+        <div class="tablist" role="tablist"><button role="tab" id="ex-t0" aria-controls="ex-p0"><span class="n">A</span>En la búsqueda de vehículos</button><button role="tab" id="ex-t1" aria-controls="ex-p1"><span class="n">B</span>En Retail Media</button></div>
+        <div class="tabpanel" role="tabpanel" id="ex-p0" aria-labelledby="ex-t0" tabindex="0"><div class="ex"><div><b>Petición</b><span>Más filtros.</span></div><div><b>Problema</b><span>El comprador tiene dificultades para distinguir los vehículos elegibles.</span></div><div><b>Hipótesis</b><span>Atributos consistentes y comparables ayudan a decidir.</span></div><div><b>Prueba</b><span>Una lista reorganizada. El filtro es solo una de las soluciones a comparar.</span></div></div></div>
+        <div class="tabpanel" role="tabpanel" id="ex-p1" aria-labelledby="ex-t1" tabindex="0"><div class="ex"><div><b>Petición</b><span>Un dashboard de audiencias.</span></div><div><b>Problema</b><span>Saber si una audiencia está actualizada y lista para activar.</span></div><div><b>Hipótesis</b><span>Mostrar definición, actualización y elegibilidad permite decidir el siguiente paso.</span></div><div><b>Prueba</b><span>Una vista sencilla, validada con comercial y operaciones.</span></div></div></div>
+      </div>
+      <h2>Seis preguntas para dar contexto a la decisión.</h2>
+      <p>Separan lo que ya se sabe de lo que aún hay que aprender. No exigen un documento largo, solo una conversación lo bastante concreta.</p>
+      <ol class="qlist"><li><h3>¿Quién necesita esto?</h3><p>Describe a una persona y una situación concreta. "Los usuarios" es demasiado genérico.</p></li><li><h3>¿Qué dificultad existe hoy?</h3><p>Separa la petición de la necesidad real. Una exportación puede esconder la dificultad de compartir información.</p></li><li><h3>¿Qué evidencia tenemos?</h3><p>Conversaciones, observaciones, solicitudes de soporte, datos de uso. Distingue lo que es hecho de lo que es hipótesis.</p></li><li><h3>¿Qué se ha intentado ya?</h3><p>Entiende cómo resuelve hoy la persona el problema, antes de construir algo nuevo.</p></li><li><h3>¿Cómo sabremos que ayudó?</h3><p>Define una señal observable: completar una tarea, reducir errores, necesitar menos ayuda. Y fija cuándo revisar.</p></li><li><h3>¿Cuál es la prueba útil más pequeña?</h3><p>Elige la prueba más barata que permita aprender (prototipo, conversación guiada, experimento manual) y qué cambiaría la decisión.</p></li></ol>
+      <h2>El resultado es una decisión más explicable.</h2>
+      <p>El equipo puede construir, probar una alternativa, reunir más evidencia o aplazar. Lo esencial es poder explicar la relación entre necesidad, evidencia y elección.</p>
+      <div class="actions" style="margin-top:2rem"><a class="btn" href="/es/recursos/diagnostico-feature/">Hacer el diagnóstico <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><button class="btn line" type="button" data-copy="Seis preguntas antes de una nueva feature&#10;&#10;1. ¿Quién necesita esto?&#10;2. ¿Qué dificultad existe hoy?&#10;3. ¿Qué evidencia tenemos?&#10;4. ¿Qué se ha intentado ya?&#10;5. ¿Cómo sabremos que ayudó?&#10;6. ¿Cuál es la prueba útil más pequeña?&#10;&#10;silasmoreira.tech/es/artigos/da-feature-ao-problema/" data-done="Preguntas copiadas">Copiar las preguntas para el equipo</button></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot-brand"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#1F2BFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="190 49" transform="rotate(-8 50 50)"/><circle cx="50" cy="50" r="15" fill="#0A1250"/><circle cx="50" cy="50" r="5" fill="#FF2E93"/><circle cx="76.9" cy="23.1" r="10" fill="#2BFF88"/></svg><span>© <span data-year>2026</span> Silas Moreira, Oporto</span></span>
+    <nav aria-label="Pie de página">
+      <a href="/es/palestras/">Charlas</a><a href="/es/sobre/">Sobre mí</a><a href="/es/partilhas/">Publicaciones</a><a href="/es/recursos/">Laboratorio</a><a href="/es/contacto/">Contacto</a>
+      <a href="https://www.linkedin.com/in/silasmoreira/" rel="noopener" target="_blank">LinkedIn</a>
+      <button type="button" data-open-privacy>Privacidad y datos</button>
+      <button type="button" data-open-consent>Preferencias de estadísticas</button>
+    </nav>
+  </div>
+</footer>
+
+<dialog class="privacy" aria-labelledby="t-priv">
+  <div class="privacy-in">
+    <h2 id="t-priv">Privacidad y datos</h2>
+    <p>Responsable del tratamiento: Silas Moreira. Para cualquier cuestión de privacidad, usa el formulario de contacto.</p>
+    <h3>Mensajes de contacto</h3>
+    <p>El formulario envía nombre, email, asunto y mensaje a través de <a href="https://formsubmit.co/privacy.pdf" rel="noopener" target="_blank">FormSubmit</a> a mi email (<a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google</a>). Uso estos datos solo para responder, con base en el interés legítimo o en diligencias precontractuales, y los guardo mientras sean necesarios. La documentación de FormSubmit indica 30 días de conservación. No incluyas datos sensibles.</p>
+    <h3>Estadísticas de visitas</h3>
+    <p>Solo con tu consentimiento, <a href="https://docs.umami.is/docs/cloud/faq" rel="noopener" target="_blank">Umami Cloud</a> registra páginas visitadas, origen, navegador, dispositivo y clics. La IP sirve para estimar la ubicación. Los datos se quedan en la Unión Europea hasta seis meses y no se venden ni se usan para publicidad.</p>
+    <h3>Preferencias del navegador y seguridad</h3>
+    <p>El sitio guarda el idioma y tu elección sobre estadísticas durante 180 días. <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener" target="_blank">Cloudflare</a> usa la cookie de seguridad __cf_bm para detectar tráfico automatizado; caduca tras 30 minutos de inactividad. Los servicios de seguridad y soporte pueden operar fuera de la UE.</p>
+    <h3>Tus derechos</h3>
+    <p>Acceso, rectificación, supresión, limitación, portabilidad y oposición, cuando proceda. Puedes retirar el consentimiento para estadísticas en "Preferencias de estadísticas", en el pie de página, y presentar una reclamación ante la <a href="https://www.cnpd.pt/cidadaos/participacoes/" rel="noopener" target="_blank">CNPD</a>.</p>
+    <form method="dialog"><button class="btn">Cerrar</button></form>
+  </div>
+</dialog>
+
+<div class="consent" role="region" aria-label="Estadísticas de visitas">
+  <p>¿Puedo medir las visitas con Umami, sin publicidad y con datos en la UE? Me ayuda a entender qué es útil.</p>
+  <div class="row"><button class="btn" data-consent="yes">Aceptar</button><button class="btn line" data-consent="no">Rechazar</button><button class="btn line" data-open-privacy>Saber más</button></div>
+</div>
+
+<script src="/assets/site.js" defer></script>
+
+</body>
+</html>

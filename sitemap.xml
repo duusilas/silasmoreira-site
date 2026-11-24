@@ -1,15 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://silasmoreira.tech/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/"/></url>
-  <url><loc>https://silasmoreira.tech/sobre/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/sobre/"/></url>
-  <url><loc>https://silasmoreira.tech/palestras/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/palestras/"/></url>
-  <url><loc>https://silasmoreira.tech/palestras/o-futuro-e-de-segunda-mao/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/palestras/o-futuro-e-de-segunda-mao/"/></url>
-  <url><loc>https://silasmoreira.tech/partilhas/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/partilhas/"/></url>
-  <url><loc>https://silasmoreira.tech/contacto/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/contacto/"/></url>
-  <url><loc>https://silasmoreira.tech/casos/pesquisa-leiloes-digitais/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/casos/pesquisa-leiloes-digitais/"/></url>
-  <url><loc>https://silasmoreira.tech/casos/retail-media/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/casos/retail-media/"/></url>
-  <url><loc>https://silasmoreira.tech/casos/ia-para-o-bem-social/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/casos/ia-para-o-bem-social/"/></url>
-  <url><loc>https://silasmoreira.tech/artigos/da-feature-ao-problema/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/artigos/da-feature-ao-problema/"/></url>
-  <url><loc>https://silasmoreira.tech/recursos/diagnostico-feature/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/recursos/diagnostico-feature/"/></url>
-  <url><loc>https://silasmoreira.tech/recursos/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/recursos/"/></url>
+  <url><loc>https://silasmoreira.tech/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/"/><xhtml:link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/"/><xhtml:link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/"/></url>
+  <url><loc>https://silasmoreira.tech/en/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/es/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/zh/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/sobre/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/sobre/"/><xhtml:link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/sobre/"/><xhtml:link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/sobre/"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/sobre/"/></url>
+  <url><loc>https://silasmoreira.tech/en/sobre/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/es/sobre/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/zh/sobre/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/palestras/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/palestras/"/><xhtml:link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/palestras/"/><xhtml:link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/palestras/"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/palestras/"/></url>
+  <url><loc>https://silasmoreira.tech/en/palestras/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/es/palestras/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/zh/palestras/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/palestras/o-futuro-e-de-segunda-mao/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/palestras/o-futuro-e-de-segunda-mao/"/><xhtml:link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/palestras/o-futuro-e-de-segunda-mao/"/><xhtml:link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/palestras/o-futuro-e-de-segunda-mao/"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/palestras/o-futuro-e-de-segunda-mao/"/></url>
+  <url><loc>https://silasmoreira.tech/en/palestras/o-futuro-e-de-segunda-mao/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/es/palestras/o-futuro-e-de-segunda-mao/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/zh/palestras/o-futuro-e-de-segunda-mao/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/partilhas/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/partilhas/"/><xhtml:link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/partilhas/"/><xhtml:link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/partilhas/"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/partilhas/"/></url>
+  <url><loc>https://silasmoreira.tech/en/partilhas/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/es/partilhas/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/zh/partilhas/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/contacto/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/contacto/"/><xhtml:link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/contacto/"/><xhtml:link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/contacto/"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/contacto/"/></url>
+  <url><loc>https://silasmoreira.tech/en/contacto/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/es/contacto/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/zh/contacto/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/casos/pesquisa-leiloes-digitais/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/casos/pesquisa-leiloes-digitais/"/><xhtml:link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/casos/pesquisa-leiloes-digitais/"/><xhtml:link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/casos/pesquisa-leiloes-digitais/"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/casos/pesquisa-leiloes-digitais/"/></url>
+  <url><loc>https://silasmoreira.tech/en/casos/pesquisa-leiloes-digitais/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/es/casos/pesquisa-leiloes-digitais/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/zh/casos/pesquisa-leiloes-digitais/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/casos/retail-media/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/casos/retail-media/"/><xhtml:link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/casos/retail-media/"/><xhtml:link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/casos/retail-media/"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/casos/retail-media/"/></url>
+  <url><loc>https://silasmoreira.tech/en/casos/retail-media/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/es/casos/retail-media/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/zh/casos/retail-media/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/casos/ia-para-o-bem-social/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/casos/ia-para-o-bem-social/"/><xhtml:link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/casos/ia-para-o-bem-social/"/><xhtml:link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/casos/ia-para-o-bem-social/"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/casos/ia-para-o-bem-social/"/></url>
+  <url><loc>https://silasmoreira.tech/en/casos/ia-para-o-bem-social/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/es/casos/ia-para-o-bem-social/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/zh/casos/ia-para-o-bem-social/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/artigos/da-feature-ao-problema/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/artigos/da-feature-ao-problema/"/><xhtml:link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/artigos/da-feature-ao-problema/"/><xhtml:link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/artigos/da-feature-ao-problema/"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/artigos/da-feature-ao-problema/"/></url>
+  <url><loc>https://silasmoreira.tech/en/artigos/da-feature-ao-problema/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/es/artigos/da-feature-ao-problema/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/zh/artigos/da-feature-ao-problema/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/recursos/diagnostico-feature/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/recursos/diagnostico-feature/"/><xhtml:link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/recursos/diagnostico-feature/"/><xhtml:link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/recursos/diagnostico-feature/"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/recursos/diagnostico-feature/"/></url>
+  <url><loc>https://silasmoreira.tech/en/recursos/diagnostico-feature/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/es/recursos/diagnostico-feature/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/zh/recursos/diagnostico-feature/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/recursos/</loc><lastmod>2026-11-24</lastmod><xhtml:link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/recursos/"/><xhtml:link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/recursos/"/><xhtml:link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/recursos/"/><xhtml:link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/recursos/"/></url>
+  <url><loc>https://silasmoreira.tech/en/recursos/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/es/recursos/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://silasmoreira.tech/zh/recursos/</loc><lastmod>2026-11-24</lastmod></url>
 </urlset>

@@ -7,6 +7,9 @@
 <meta name="description" content="Antes do backlog, seis perguntas. Um diagnóstico gratuito de três minutos, sem pedir e-mail, para decidir o próximo passo de uma ideia de produto.">
 <link rel="canonical" href="https://silasmoreira.tech/recursos/diagnostico-feature/">
 <link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/recursos/diagnostico-feature/">
+<link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/recursos/diagnostico-feature/">
+<link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/recursos/diagnostico-feature/">
+<link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/recursos/diagnostico-feature/">
 <link rel="alternate" hreflang="x-default" href="https://silasmoreira.tech/recursos/diagnostico-feature/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Silas Moreira">
@@ -38,7 +41,7 @@
   <div class="wrap">
     <a class="logo" href="/" aria-label="Silas Moreira, página inicial"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#1F2BFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="190 49" transform="rotate(-8 50 50)"/><circle cx="50" cy="50" r="15" fill="#0A1250"/><circle cx="50" cy="50" r="5" fill="#FF2E93"/><circle cx="76.9" cy="23.1" r="10" fill="#2BFF88"/></svg>Silas Moreira</a>
     <nav class="nav" aria-label="Principal"><a href="/">Início</a><a href="/palestras/">Em palco</a><a href="/sobre/#trajetoria">O meu percurso</a><a href="/partilhas/">Partilhas</a><a href="/recursos/" aria-current="page">Laboratório</a><a class="nav-cta" href="/contacto/">Contacto</a></nav>
-    
+    <div class="langs" aria-label="Idioma"><a class="lang on" aria-current="true" lang="pt-PT">PT</a><a class="lang" href="/en/recursos/diagnostico-feature/" hreflang="en" lang="en">EN</a><a class="lang" href="/es/recursos/diagnostico-feature/" hreflang="es" lang="es">ES</a><a class="lang" href="/zh/recursos/diagnostico-feature/" hreflang="zh" lang="zh">中文</a></div>
     <button class="menu-btn" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span></button>
   </div>
 </header>
@@ -71,7 +74,7 @@
 
 <footer class="foot">
   <div class="wrap">
-    <span class="foot-brand">'+LOGO+'<span>© <span data-year>2026</span> Silas Moreira, Porto</span></span>
+    <span class="foot-brand"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#1F2BFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="190 49" transform="rotate(-8 50 50)"/><circle cx="50" cy="50" r="15" fill="#0A1250"/><circle cx="50" cy="50" r="5" fill="#FF2E93"/><circle cx="76.9" cy="23.1" r="10" fill="#2BFF88"/></svg><span>© <span data-year>2026</span> Silas Moreira, Porto</span></span>
     <nav aria-label="Rodapé">
       <a href="/palestras/">Palestras</a><a href="/sobre/">Sobre</a><a href="/partilhas/">Partilhas</a><a href="/recursos/">Laboratório</a><a href="/contacto/">Contacto</a>
       <a href="https://www.linkedin.com/in/silasmoreira/" rel="noopener" target="_blank">LinkedIn</a>
@@ -104,6 +107,15 @@
 
 <script src="/assets/site.js" defer></script>
 <script>const DIAG_Q=["Quem precisa disto?", "Que dificuldade existe hoje?", "Que evidência temos?", "O que já foi tentado?", "Como saberemos que ajudou?", "Qual é o menor teste útil?"];{
+  const X = Object.assign({
+    keep:'Continua: faltam ', start:'Começa pela primeira pergunta.', priv:'As respostas ficam no teu navegador. Não são enviadas nem guardadas.',
+    t1:'Ainda é cedo para construir.', p1:'Volta ao problema. Antes de qualquer feature, fala com quem tem a dificuldade e junta evidência.',
+    t2:'Há sinais. Falta evidência.', p2:'Faz um teste pequeno antes de comprometer o backlog: um protótipo, uma conversa guiada ou uma experiência manual.',
+    t3:'Bom ponto de partida.', p3:'Define o sinal de sucesso e avança com o menor teste útil. Revê o que ficou "em parte".',
+    t4:'Pronto para testar a sério.', p4:'Tens contexto, evidência e um sinal de sucesso. Avança com uma entrega pequena e marca quando rever.',
+    ans:'Responder: ', reinf:'Reforçar: ', none:'Responde às seis perguntas para obter o resultado.', copied:'Resultado copiado', copy:'Copiar resultado', fail:'Seleciona e copia o texto',
+    url:'silasmoreira.tech/recursos/diagnostico-feature/'
+  }, window.DIAG_TXT || {});
   const f=document.getElementById('diag');
   if(f){
     const n=document.getElementById('d-n'),m=document.getElementById('d-m'),t=document.getElementById('d-t'),p=document.getElementById('d-p'),l=document.getElementById('d-l'),cp=document.getElementById('d-copy');
@@ -114,24 +126,20 @@
       const done=a.filter(x=>x!==null).length,sum=a.reduce((s,x)=>s+(x||0),0);
       n.textContent=done; m.style.setProperty('--v',(sum/12*100)+'%');
       f.querySelectorAll('.qcard').forEach((c,i)=>c.classList.toggle('done',a[i]!==null));
-      if(done<6){t.textContent=done?'Continua: faltam '+(6-done)+'.':'Começa pela primeira pergunta.';p.textContent='As respostas ficam no teu navegador. Não são enviadas nem guardadas.';l.innerHTML='';last='';return;}
+      if(done<6){t.textContent=done?X.keep+(6-done)+'.':X.start;p.textContent=X.priv;l.innerHTML='';last='';return;}
       const gaps=DIAG_Q.filter((_,i)=>a[i]===0),part=DIAG_Q.filter((_,i)=>a[i]===1);
-      let title,text;
-      if(sum<=4){title='Ainda é cedo para construir.';text='Volta ao problema. Antes de qualquer feature, fala com quem tem a dificuldade e junta evidência.';}
-      else if(sum<=8){title='Há sinais. Falta evidência.';text='Faz um teste pequeno antes de comprometer o backlog: um protótipo, uma conversa guiada ou uma experiência manual.';}
-      else if(sum<=11){title='Bom ponto de partida.';text='Define o sinal de sucesso e avança com o menor teste útil. Revê o que ficou "em parte".';}
-      else{title='Pronto para testar a sério.';text='Tens contexto, evidência e um sinal de sucesso. Avança com uma entrega pequena e marca quando rever.';}
-      t.textContent=title; p.textContent=text;
-      const items=[...gaps.map(q=>'Responder: '+q),...part.map(q=>'Reforçar: '+q)];
+      const k=sum<=4?1:sum<=8?2:sum<=11?3:4;
+      t.textContent=X['t'+k]; p.textContent=X['p'+k];
+      const items=[...gaps.map(q=>X.ans+q),...part.map(q=>X.reinf+q)];
       l.innerHTML=items.slice(0,4).map(x=>'<li>'+esc(x)+'</li>').join('');
-      last=title+'\n'+text+(items.length?'\n\n'+items.join('\n'):'')+'\n\nsilasmoreira.tech/recursos/diagnostico-feature/';
+      last=X['t'+k]+'\n'+X['p'+k]+(items.length?'\n\n'+items.join('\n'):'')+'\n\n'+X.url;
       if(!tracked&&window.umami){umami.track('diagnostico-concluido',{pontos:sum});tracked=true;}
     };
     f.addEventListener('change',calc);
     f.addEventListener('submit',e=>e.preventDefault());
     cp.addEventListener('click',async()=>{
-      const txt=last||'Responde às seis perguntas para obter o resultado.';
-      try{await navigator.clipboard.writeText(txt);cp.textContent='Resultado copiado';setTimeout(()=>cp.textContent='Copiar resultado',2000);}catch(err){cp.textContent='Seleciona e copia o texto';}
+      const txt=last||X.none;
+      try{await navigator.clipboard.writeText(txt);cp.textContent=X.copied;setTimeout(()=>cp.textContent=X.copy,2000);}catch(err){cp.textContent=X.fail;}
     });
     calc();
   }

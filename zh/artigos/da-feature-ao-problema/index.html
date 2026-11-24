@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-umami="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>先有问题，再有功能 — Silas Moreira（莫雨桐）的产品探索指南</title>
+<meta name="description" content="从需求到产品决策之间，需要探索：找到问题、假设和有用的测试。给你的团队六个问题。">
+<link rel="canonical" href="https://silasmoreira.tech/zh/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="x-default" href="https://silasmoreira.tech/artigos/da-feature-ao-problema/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Silas Moreira">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="Silas Moreira">
+<meta property="og:title" content="先有问题，再有功能 — Silas Moreira（莫雨桐）的产品探索指南">
+<meta property="og:description" content="从需求到产品决策之间，需要探索：找到问题、假设和有用的测试。给你的团队六个问题。">
+<meta property="og:url" content="https://silasmoreira.tech/zh/artigos/da-feature-ao-problema/">
+<meta property="og:image" content="https://silasmoreira.tech/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="莫雨桐 Silas Moreira — 连接想法、人与视角。">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "先有问题，再有功能。", "datePublished": "2026-11-08", "author": {"@id": "https://silasmoreira.tech/#silas"}, "inLanguage": "zh-Hans", "url": "https://silasmoreira.tech/zh/artigos/da-feature-ao-problema/", "timeRequired": "PT6M"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://silasmoreira.tech/zh/"}, {"@type": "ListItem", "position": 2, "name": "实验室", "item": "https://silasmoreira.tech/zh/recursos/"}, {"@type": "ListItem", "position": 3, "name": "先有问题，再有功能", "item": "https://silasmoreira.tech/zh/artigos/da-feature-ao-problema/"}]}]}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/zh/" aria-label="莫雨桐 Silas Moreira，首页"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#1F2BFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="190 49" transform="rotate(-8 50 50)"/><circle cx="50" cy="50" r="15" fill="#0A1250"/><circle cx="50" cy="50" r="5" fill="#FF2E93"/><circle cx="76.9" cy="23.1" r="10" fill="#2BFF88"/></svg><span class="logo-zh">莫雨桐</span>Silas Moreira</a>
+    <nav class="nav" aria-label="主导航"><a href="/zh/">首页</a><a href="/zh/palestras/">演讲</a><a href="/zh/sobre/#trajetoria">我的经历</a><a href="/zh/partilhas/">分享</a><a href="/zh/recursos/" aria-current="page">实验室</a><a class="nav-cta" href="/zh/contacto/">联系</a></nav>
+    <div class="langs" aria-label="语言"><a class="lang" href="/artigos/da-feature-ao-problema/" hreflang="pt" lang="pt-PT">PT</a><a class="lang" href="/en/artigos/da-feature-ao-problema/" hreflang="en" lang="en">EN</a><a class="lang" href="/es/artigos/da-feature-ao-problema/" hreflang="es" lang="es">ES</a><a class="lang on" aria-current="true" lang="zh-Hans">中文</a></div>
+    <button class="menu-btn" aria-expanded="false" aria-label="打开菜单"><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+
+  <div class="read-progress" aria-hidden="true"></div>
+  <section class="article-hero tech-bg" aria-labelledby="h1">
+    <span class="glow g1" aria-hidden="true" style="opacity:.22"></span>
+    <div class="wrap">
+      <p class="crumbs"><a href="/zh/">首页</a> / <a href="/zh/recursos/">实验室</a> / 没人要这个功能</p>
+      <h1 id="h1">先有问题，再有功能。</h1>
+      <p class="lede">从需求到产品决策之间，有一段探索工作：找到问题、假设和有用的测试。</p>
+      <p class="meta"><span>Silas Moreira</span><time datetime="2026-11-08">2026年11月8日</time><span>阅读约 6 分钟</span></p>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:2rem">
+    <div class="wrap read">
+      <p>“更多筛选条件”或“一个仪表盘”这样的需求，往往一开始就带着方案的样子。这可以理解：想象方案比描述困难容易。</p>
+      <blockquote>“我们需要一个新的筛选条件。”</blockquote>
+      <p>产品工作始于在需求和决定开发之间留出空间。谁需要什么？是什么阻碍了他们？有什么证据？问题解决后会有什么改变？</p>
+      <h2>一个需求背后可能藏着不同的问题。</h2>
+      <div data-tabs class="ex-tabs">
+        <div class="tablist" role="tablist"><button role="tab" id="ex-t0" aria-controls="ex-p0"><span class="n">A</span>在车辆搜索中</button><button role="tab" id="ex-t1" aria-controls="ex-p1"><span class="n">B</span>在零售媒体中</button></div>
+        <div class="tabpanel" role="tabpanel" id="ex-p0" aria-labelledby="ex-t0" tabindex="0"><div class="ex"><div><b>需求</b><span>更多筛选条件。</span></div><div><b>问题</b><span>买家难以区分符合条件的车辆。</span></div><div><b>假设</b><span>一致、可比较的属性有助于决策。</span></div><div><b>测试</b><span>重新组织的列表。筛选只是可比较的方案之一。</span></div></div></div>
+        <div class="tabpanel" role="tabpanel" id="ex-p1" aria-labelledby="ex-t1" tabindex="0"><div class="ex"><div><b>需求</b><span>一个受众仪表盘。</span></div><div><b>问题</b><span>了解受众是否已更新并可以激活。</span></div><div><b>假设</b><span>展示定义、更新时间和资格，就能决定下一步。</span></div><div><b>测试</b><span>一个简单的视图，经销售和运营团队验证。</span></div></div></div>
+      </div>
+      <h2>为决策提供背景的六个问题。</h2>
+      <p>它们把已知和待学的部分分开。不需要长文档，只需要一场足够具体的对话。</p>
+      <ol class="qlist"><li><h3>谁需要它？</h3><p>描述一个具体的人和具体的场景。“用户”太笼统了。</p></li><li><h3>现在存在什么困难？</h3><p>把需求和真正的需要分开。一个“导出”功能背后，可能是分享信息的困难。</p></li><li><h3>我们有什么证据？</h3><p>访谈、观察、客服请求、使用数据。区分事实与假设。</p></li><li><h3>已经尝试过什么？</h3><p>在开发新东西之前，先了解对方现在如何解决这个问题。</p></li><li><h3>我们怎么知道它起作用了？</h3><p>定义一个可观察的信号：完成任务、减少错误、需要更少帮助。并约定复盘时间。</p></li><li><h3>最小的有用测试是什么？</h3><p>选择最便宜但能学到东西的测试（原型、引导式访谈、人工实验），并明确什么会改变决定。</p></li></ol>
+      <h2>结果是一个更能解释清楚的决定。</h2>
+      <p>团队可以开发、尝试替代方案、收集更多证据或推迟。关键是能解释需求、证据和选择之间的联系。</p>
+      <div class="actions" style="margin-top:2rem"><a class="btn" href="/zh/recursos/diagnostico-feature/">开始自测 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><button class="btn line" type="button" data-copy="开发新功能前的六个问题&#10;&#10;1. 谁需要它？&#10;2. 现在存在什么困难？&#10;3. 我们有什么证据？&#10;4. 已经尝试过什么？&#10;5. 我们怎么知道它起作用了？&#10;6. 最小的有用测试是什么？&#10;&#10;silasmoreira.tech/zh/artigos/da-feature-ao-problema/" data-done="问题已复制">复制问题给团队</button></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot-brand"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#1F2BFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="190 49" transform="rotate(-8 50 50)"/><circle cx="50" cy="50" r="15" fill="#0A1250"/><circle cx="50" cy="50" r="5" fill="#FF2E93"/><circle cx="76.9" cy="23.1" r="10" fill="#2BFF88"/></svg><span>© <span data-year>2026</span> 莫雨桐 Silas Moreira，波尔图</span></span>
+    <nav aria-label="页脚">
+      <a href="/zh/palestras/">演讲</a><a href="/zh/sobre/">关于</a><a href="/zh/partilhas/">分享</a><a href="/zh/recursos/">实验室</a><a href="/zh/contacto/">联系</a>
+      <a href="https://www.linkedin.com/in/silasmoreira/" rel="noopener" target="_blank">领英</a>
+      <button type="button" data-open-privacy>隐私与数据</button>
+      <button type="button" data-open-consent>统计偏好</button>
+    </nav>
+  </div>
+</footer>
+
+<dialog class="privacy" aria-labelledby="t-priv">
+  <div class="privacy-in">
+    <h2 id="t-priv">隐私与数据</h2>
+    <p>数据控制者：Silas Moreira。如有任何隐私问题，请使用联系表单。</p>
+    <h3>联系留言</h3>
+    <p>表单会通过 <a href="https://formsubmit.co/privacy.pdf" rel="noopener" target="_blank">FormSubmit</a> 将姓名、邮箱、主题和留言发送到我的邮箱（<a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google</a>）。我仅将这些数据用于回复，依据为正当利益或合同前措施，并只在必要期间保存。FormSubmit 的文档说明保存期为 30 天。请不要填写敏感信息。</p>
+    <h3>访问统计</h3>
+    <p>仅在你同意的情况下， <a href="https://docs.umami.is/docs/cloud/faq" rel="noopener" target="_blank">Umami Cloud</a> 会记录访问的页面、来源、浏览器、设备和点击。IP 仅用于估算位置。数据存放在欧盟境内，最长保留六个月，绝不出售或用于广告。</p>
+    <h3>浏览器偏好与安全</h3>
+    <p>网站会保存你的语言和统计选择，为期 180 天。 <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener" target="_blank">Cloudflare</a> 使用安全 Cookie __cf_bm 检测自动化流量，闲置 30 分钟后失效。安全与支持服务可能在欧盟以外运行。</p>
+    <h3>你的权利</h3>
+    <p>在适用情况下，你享有访问、更正、删除、限制、可携和反对的权利。你可以在页脚的“统计偏好”中撤回统计同意，也可以向以下机构投诉： <a href="https://www.cnpd.pt/cidadaos/participacoes/" rel="noopener" target="_blank">CNPD</a>.</p>
+    <form method="dialog"><button class="btn">关闭</button></form>
+  </div>
+</dialog>
+
+<div class="consent" role="region" aria-label="访问统计">
+  <p>我可以用 Umami 统计访问吗？无广告，数据存放在欧盟。这能帮我了解哪些内容有用。</p>
+  <div class="row"><button class="btn" data-consent="yes">同意</button><button class="btn line" data-consent="no">拒绝</button><button class="btn line" data-open-privacy>了解更多</button></div>
+</div>
+
+<script src="/assets/site.js" defer></script>
+
+</body>
+</html>

@@ -1,3 +1,117 @@
-<!DOCTYPE html><html lang="pt-PT"><head><meta charset="utf-8"><title>A redirecionar…</title>
-<link rel="canonical" href="https://silasmoreira.tech/artigos/da-feature-ao-problema/"><meta name="robots" content="noindex, follow"><meta http-equiv="refresh" content="0; url=/artigos/da-feature-ao-problema/">
-<script>location.replace("/artigos/da-feature-ao-problema/" + location.hash)</script></head><body><p><a href="/artigos/da-feature-ao-problema/">Continuar para https://silasmoreira.tech/artigos/da-feature-ao-problema/</a></p></body></html>
+<!DOCTYPE html>
+<html lang="en" data-umami="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The problem before the feature — a product discovery guide by Silas Moreira</title>
+<meta name="description" content="Between a request and a product decision there is discovery: getting to the problem, the hypothesis and a useful test. Six questions for your team.">
+<link rel="canonical" href="https://silasmoreira.tech/en/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="pt-PT" href="https://silasmoreira.tech/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="es" href="https://silasmoreira.tech/es/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="zh-Hans" href="https://silasmoreira.tech/zh/artigos/da-feature-ao-problema/">
+<link rel="alternate" hreflang="x-default" href="https://silasmoreira.tech/artigos/da-feature-ao-problema/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Silas Moreira">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Silas Moreira">
+<meta property="og:title" content="The problem before the feature — a product discovery guide by Silas Moreira">
+<meta property="og:description" content="Between a request and a product decision there is discovery: getting to the problem, the hypothesis and a useful test. Six questions for your team.">
+<meta property="og:url" content="https://silasmoreira.tech/en/artigos/da-feature-ao-problema/">
+<meta property="og:image" content="https://silasmoreira.tech/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Silas Moreira — Connecting ideas, people and perspectives.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "The problem before the feature.", "datePublished": "2026-11-08", "author": {"@id": "https://silasmoreira.tech/#silas"}, "inLanguage": "en", "url": "https://silasmoreira.tech/en/artigos/da-feature-ao-problema/", "timeRequired": "PT6M"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://silasmoreira.tech/en/"}, {"@type": "ListItem", "position": 2, "name": "Lab", "item": "https://silasmoreira.tech/en/recursos/"}, {"@type": "ListItem", "position": 3, "name": "The problem before the feature", "item": "https://silasmoreira.tech/en/artigos/da-feature-ao-problema/"}]}]}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/en/" aria-label="Silas Moreira, home page"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#1F2BFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="190 49" transform="rotate(-8 50 50)"/><circle cx="50" cy="50" r="15" fill="#0A1250"/><circle cx="50" cy="50" r="5" fill="#FF2E93"/><circle cx="76.9" cy="23.1" r="10" fill="#2BFF88"/></svg>Silas Moreira</a>
+    <nav class="nav" aria-label="Main"><a href="/en/">Home</a><a href="/en/palestras/">On stage</a><a href="/en/sobre/#trajetoria">My journey</a><a href="/en/partilhas/">Shares</a><a href="/en/recursos/" aria-current="page">Lab</a><a class="nav-cta" href="/en/contacto/">Contact</a></nav>
+    <div class="langs" aria-label="Language"><a class="lang" href="/artigos/da-feature-ao-problema/" hreflang="pt" lang="pt-PT">PT</a><a class="lang on" aria-current="true" lang="en">EN</a><a class="lang" href="/es/artigos/da-feature-ao-problema/" hreflang="es" lang="es">ES</a><a class="lang" href="/zh/artigos/da-feature-ao-problema/" hreflang="zh" lang="zh-Hans">中文</a></div>
+    <button class="menu-btn" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+
+  <div class="read-progress" aria-hidden="true"></div>
+  <section class="article-hero tech-bg" aria-labelledby="h1">
+    <span class="glow g1" aria-hidden="true" style="opacity:.22"></span>
+    <div class="wrap">
+      <p class="crumbs"><a href="/en/">Home</a> / <a href="/en/recursos/">Lab</a> / Nobody Asked for That Feature</p>
+      <h1 id="h1">The problem before the feature.</h1>
+      <p class="lede">Between a request and a product decision there is discovery work: getting to the problem, the hypothesis and a useful test.</p>
+      <p class="meta"><span>Silas Moreira</span><time datetime="2026-11-08">8 Nov 2026</time><span>6 min read</span></p>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:2rem">
+    <div class="wrap read">
+      <p>Requests like "more filters" or "a dashboard" often arrive already shaped as a solution. That's understandable: it's easier to imagine a solution than to describe a difficulty.</p>
+      <blockquote>"We need a new filter."</blockquote>
+      <p>Product work starts when we create space between the request and the decision to build. Who needs what? What's stopping them? What evidence exists? What would change if the problem were solved?</p>
+      <h2>One request can hide different problems.</h2>
+      <div data-tabs class="ex-tabs">
+        <div class="tablist" role="tablist"><button role="tab" id="ex-t0" aria-controls="ex-p0"><span class="n">A</span>In vehicle search</button><button role="tab" id="ex-t1" aria-controls="ex-p1"><span class="n">B</span>In Retail Media</button></div>
+        <div class="tabpanel" role="tabpanel" id="ex-p0" aria-labelledby="ex-t0" tabindex="0"><div class="ex"><div><b>Request</b><span>More filters.</span></div><div><b>Problem</b><span>The buyer struggles to tell eligible vehicles apart.</span></div><div><b>Hypothesis</b><span>Consistent, comparable attributes help decide.</span></div><div><b>Test</b><span>A reorganised list. The filter is just one of the solutions to compare.</span></div></div></div>
+        <div class="tabpanel" role="tabpanel" id="ex-p1" aria-labelledby="ex-t1" tabindex="0"><div class="ex"><div><b>Request</b><span>An audience dashboard.</span></div><div><b>Problem</b><span>Knowing whether an audience is up to date and ready to activate.</span></div><div><b>Hypothesis</b><span>Showing definition, freshness and eligibility makes it possible to decide the next step.</span></div><div><b>Test</b><span>A simple view, validated with sales and operations.</span></div></div></div>
+      </div>
+      <h2>Six questions to give context to the decision.</h2>
+      <p>They separate what we already know from what we still need to learn. They don't require a long document, just a concrete enough conversation.</p>
+      <ol class="qlist"><li><h3>Who needs this?</h3><p>Describe a person and a concrete situation. "The users" is too generic.</p></li><li><h3>What difficulty exists today?</h3><p>Separate the request from the real need. An export can hide the difficulty of sharing information.</p></li><li><h3>What evidence do we have?</h3><p>Conversations, observations, support requests, usage data. Tell fact apart from hypothesis.</p></li><li><h3>What has already been tried?</h3><p>Understand how the person solves the problem today, before building something new.</p></li><li><h3>How will we know it helped?</h3><p>Define an observable signal: completing a task, reducing errors, needing less help. And set a date to review.</p></li><li><h3>What is the smallest useful test?</h3><p>Choose the cheapest test that lets you learn (prototype, guided conversation, manual experiment) and what would change the decision.</p></li></ol>
+      <h2>The result is a more explainable decision.</h2>
+      <p>The team can build, try an alternative, gather more evidence or postpone. What matters is being able to explain the link between need, evidence and choice.</p>
+      <div class="actions" style="margin-top:2rem"><a class="btn" href="/en/recursos/diagnostico-feature/">Take the diagnostic <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><button class="btn line" type="button" data-copy="Six questions before a new feature&#10;&#10;1. Who needs this?&#10;2. What difficulty exists today?&#10;3. What evidence do we have?&#10;4. What has already been tried?&#10;5. How will we know it helped?&#10;6. What is the smallest useful test?&#10;&#10;silasmoreira.tech/en/artigos/da-feature-ao-problema/" data-done="Questions copied">Copy the questions for the team</button></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot-brand"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#1F2BFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="190 49" transform="rotate(-8 50 50)"/><circle cx="50" cy="50" r="15" fill="#0A1250"/><circle cx="50" cy="50" r="5" fill="#FF2E93"/><circle cx="76.9" cy="23.1" r="10" fill="#2BFF88"/></svg><span>© <span data-year>2026</span> Silas Moreira, Porto</span></span>
+    <nav aria-label="Footer">
+      <a href="/en/palestras/">Talks</a><a href="/en/sobre/">About</a><a href="/en/partilhas/">Shares</a><a href="/en/recursos/">Lab</a><a href="/en/contacto/">Contact</a>
+      <a href="https://www.linkedin.com/in/silasmoreira/" rel="noopener" target="_blank">LinkedIn</a>
+      <button type="button" data-open-privacy>Privacy and data</button>
+      <button type="button" data-open-consent>Analytics preferences</button>
+    </nav>
+  </div>
+</footer>
+
+<dialog class="privacy" aria-labelledby="t-priv">
+  <div class="privacy-in">
+    <h2 id="t-priv">Privacy and data</h2>
+    <p>Data controller: Silas Moreira. For any privacy question, use the contact form.</p>
+    <h3>Contact messages</h3>
+    <p>The form sends your name, email, subject and message through <a href="https://formsubmit.co/privacy.pdf" rel="noopener" target="_blank">FormSubmit</a> to my email (<a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google</a>). I use this data only to reply, based on legitimate interest or pre-contractual steps, and keep it only as long as needed. FormSubmit's documentation states 30 days of retention. Please don't include sensitive data.</p>
+    <h3>Visit analytics</h3>
+    <p>Only with your consent, <a href="https://docs.umami.is/docs/cloud/faq" rel="noopener" target="_blank">Umami Cloud</a> records pages visited, referrer, browser, device and clicks. The IP is used to estimate location. Data stays in the European Union for up to six months and is never sold or used for advertising.</p>
+    <h3>Browser preferences and security</h3>
+    <p>The site stores your language and analytics choice for 180 days. <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener" target="_blank">Cloudflare</a> uses the security cookie __cf_bm to detect automated traffic; it expires after 30 minutes of inactivity. Security and support services may operate outside the EU.</p>
+    <h3>Your rights</h3>
+    <p>Access, rectification, erasure, restriction, portability and objection, where applicable. You can withdraw analytics consent under "Analytics preferences" in the footer, and lodge a complaint with the <a href="https://www.cnpd.pt/cidadaos/participacoes/" rel="noopener" target="_blank">CNPD</a>.</p>
+    <form method="dialog"><button class="btn">Close</button></form>
+  </div>
+</dialog>
+
+<div class="consent" role="region" aria-label="Visit analytics">
+  <p>May I measure visits with Umami, with no advertising and data kept in the EU? It helps me understand what is useful.</p>
+  <div class="row"><button class="btn" data-consent="yes">Accept</button><button class="btn line" data-consent="no">Decline</button><button class="btn line" data-open-privacy>Learn more</button></div>
+</div>
+
+<script src="/assets/site.js" defer></script>
+
+</body>
+</html>
