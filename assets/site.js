@@ -27,6 +27,10 @@
     mb.setAttribute('aria-expanded', open); mb.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
     document.body.style.overflow = open ? 'hidden' : '';
   });
+  const closeMenu = () => { if (!top || !top.classList.contains('open')) return; top.classList.remove('open'); document.body.style.overflow = ''; mb && (mb.setAttribute('aria-expanded', 'false'), mb.setAttribute('aria-label', 'Abrir menu')); };
+  $$('.nav a').forEach(a => a.addEventListener('click', closeMenu));
+  addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  addEventListener('resize', () => { if (innerWidth > 960) closeMenu(); });
 
   /* revelação + contadores */
   const countUp = el => {
