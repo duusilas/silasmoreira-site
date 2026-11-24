@@ -743,3 +743,14 @@ dialog.privacy::backdrop{background:rgba(10,18,80,.5);backdrop-filter:blur(4px)}
 .menu-btn span:first-child{top:17px}.menu-btn span:last-child{top:25px}
 .top.open .menu-btn span:first-child{top:21px;transform:rotate(45deg)!important}
 .top.open .menu-btn span:last-child{top:21px;transform:rotate(-45deg)!important}
+/* logótipo: arco em movimento */
+.logo-mark{width:34px;height:34px;flex:none;transition:transform .6s var(--spring)}
+.logo:hover .logo-mark{transform:rotate(-25deg)}
+.core .mark-w{width:62%;height:62%;animation:spin 24s linear infinite}
+.foot-brand{display:inline-flex;align-items:center;gap:.6rem}
+.foot-brand .logo-mark{width:26px;height:26px}
+.foot-brand .logo-mark circle:first-child{stroke:#fff}
+.foot-brand .logo-mark circle:nth-child(2){fill:#2BFF88}
+.foot-brand .logo-mark circle:nth-child(3){fill:#0A1250}
+.foot-brand .logo-mark circle:nth-child(4){fill:#FF2E93}
+@media (prefers-reduced-motion:reduce){.core .mark-w{animation:none}}
