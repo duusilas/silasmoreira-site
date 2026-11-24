@@ -118,6 +118,28 @@
     addEventListener('resize', sync); sync();
   });
 
+  /* percurso em órbita: o cartão ao centro fica ativo */
+  $$('[data-orb]').forEach(orb => {
+    const track = $('.orb-track', orb), items = [...track.children], prev = $('[data-prev]', orb), next = $('[data-next]', orb);
+    const count = $('.orb-count', orb.closest('section'));
+    let cur = 0;
+    const center = () => { const c = track.scrollLeft + track.clientWidth / 2; let b = 0, d = Infinity; items.forEach((it, i) => { const dd = Math.abs(it.offsetLeft + it.offsetWidth / 2 - c); if (dd < d) { d = dd; b = i; } }); return b; };
+    const go = i => { i = Math.max(0, Math.min(items.length - 1, i)); const it = items[i]; track.scrollTo({ left: it.offsetLeft - (track.clientWidth - it.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' }); };
+    const sync = () => {
+      cur = center();
+      items.forEach((it, k) => it.classList.toggle('on', k === cur));
+      if (prev) prev.disabled = cur === 0;
+      if (next) next.disabled = cur === items.length - 1;
+      if (count) count.textContent = `${String(cur + 1).padStart(2, '0')} / ${String(items.length).padStart(2, '0')}`;
+    };
+    prev && prev.addEventListener('click', () => go(cur - 1));
+    next && next.addEventListener('click', () => go(cur + 1));
+    items.forEach((it, i) => it.addEventListener('click', e => { if (i !== cur && !e.target.closest('a')) { e.preventDefault(); go(i); } }));
+    track.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { e.preventDefault(); go(cur + 1); } if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur - 1); } });
+    track.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+    addEventListener('resize', sync); sync();
+  });
+
   /* tabs */
   $$('[data-tabs]').forEach(w => {
     const tabs = $$('[role="tab"]', w), panels = $$('[role="tabpanel"]', w), bar = $$('.layer-bar i', w);

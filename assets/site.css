@@ -776,3 +776,39 @@ html[lang="zh-Hans"] h1,html[lang="zh-Hans"] h2,html[lang="zh-Hans"] h3{letter-s
 .phero .pf{margin-top:1rem}
 @media (max-width:880px){.pf{width:min(82%,380px)}}
 @media (prefers-reduced-motion:reduce){.pf-ring{animation:none}}
+
+/* Percurso em órbita (página Sobre) */
+.orb-sec{overflow:hidden}
+.orb-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem}
+.orb-head .head{margin-bottom:0}
+.orb-count{font-weight:700;color:rgba(255,255,255,.75);font-variant-numeric:tabular-nums;white-space:nowrap;padding-bottom:.4rem}
+.orb{position:relative;margin-top:3rem;--cw:min(360px,78vw)}
+.orb::before{content:"";position:absolute;left:0;right:0;top:calc(1rem + 11px);height:2px;background:#2A357F}
+.orb-track{position:relative;list-style:none;margin:0;display:flex;gap:2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:1rem calc(50% - var(--cw)/2) 1.5rem}
+.orb-track::-webkit-scrollbar{display:none}
+.orb-track:focus-visible{outline:3px solid var(--neon);outline-offset:-3px}
+.orb-item{flex:0 0 var(--cw);scroll-snap-align:center;display:flex;flex-direction:column;align-items:center;gap:1.75rem;cursor:pointer}
+.orb-dot{width:24px;height:24px;border-radius:50%;background:var(--ink);box-shadow:inset 0 0 0 4px #5A64A8;transition:background .4s,box-shadow .4s,transform .4s var(--spring)}
+.orb-card{width:100%;min-height:340px;display:flex;flex-direction:column;gap:.7rem;padding:2rem;border-radius:28px;background:#121C66;color:var(--white);box-shadow:inset 0 0 0 2px #2A357F;transform:scale(.92);transition:transform .5s var(--ease),background .4s,color .4s,box-shadow .4s}
+.orb-card .when{font-size:.92rem;font-weight:800;color:var(--neon)}
+.orb-card h3{margin:0;font-size:.95rem;font-weight:700;letter-spacing:0;opacity:.85}
+.orb-card .role{font-size:1.7rem;line-height:1.12;font-weight:800;letter-spacing:-.02em}
+.orb-card p{margin:0;opacity:.85;font-size:1rem;line-height:1.55}
+.orb-card .case-link{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:.5rem;min-height:44px;font-weight:700;color:var(--pink);text-decoration:none}
+.orb-card .case-link svg{width:18px;height:18px}
+.orb-item.on{cursor:default}
+.orb-item.on .orb-dot{background:var(--neon);box-shadow:inset 0 0 0 4px var(--neon);transform:scale(1.1)}
+.orb-item.on .orb-card{background:var(--white);color:var(--ink);box-shadow:inset 0 0 0 2px var(--white);transform:none}
+.orb-item.on .when{color:var(--cobalt)}
+.orb-item.on .case-link{color:var(--cobalt)}
+.orb-item.on .case-link:hover{color:var(--ink)}
+.orb-item:not(.on):hover .orb-card{box-shadow:inset 0 0 0 2px #5A64A8}
+.orb-bar{display:flex;justify-content:center;gap:1rem;margin-top:1rem}
+.orb-bar button{all:unset;cursor:pointer;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 2px #2A357F;color:var(--white);transition:transform .3s var(--spring),background .2s}
+.orb-bar button[data-next]{background:var(--white);color:var(--ink);box-shadow:none}
+.orb-bar button:hover{transform:scale(1.06)}
+.orb-bar button:disabled{opacity:.35;cursor:default;transform:none}
+.orb-bar button:focus-visible{outline:3px solid var(--neon);outline-offset:3px}
+.orb-bar svg{width:22px;height:22px}
+@media (max-width:640px){.orb-head{flex-direction:column;align-items:flex-start;gap:.5rem}.orb-track{gap:1rem}.orb-card{padding:1.6rem;min-height:320px}.orb-card .role{font-size:1.45rem}}
+@media (prefers-reduced-motion:reduce){.orb-track{scroll-behavior:auto}.orb-card,.orb-dot{transition:none}}
