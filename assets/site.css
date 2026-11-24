@@ -765,3 +765,14 @@ html[lang="zh-Hans"] body{font-family:var(--font),"Noto Sans SC","PingFang SC","
 html[lang="zh-Hans"] h1,html[lang="zh-Hans"] h2,html[lang="zh-Hans"] h3{letter-spacing:0;line-height:1.2}
 .logo-zh{font-weight:800;color:var(--cobalt);margin-right:.35rem;letter-spacing:.02em}
 @media (max-width:400px){.logo-zh{display:none}}
+/* retrato */
+.pf{position:relative;margin:0;width:min(100%,440px);aspect-ratio:1;justify-self:center;isolation:isolate}
+.pf picture,.pf img{display:block;width:100%;height:100%}
+.pf img{object-fit:cover;border-radius:44% 44% 32px 32px;box-shadow:0 30px 60px -28px rgba(10,18,80,.55)}
+.pf::before{content:"";position:absolute;inset:auto -6% -6% auto;width:58%;aspect-ratio:1;border-radius:50%;background:var(--neon);z-index:-1}
+.pf-ring{position:absolute;inset:-7%;border-radius:50%;border:1.5px dashed rgba(31,43,255,.35);z-index:-1;animation:spin 40s linear infinite}
+.pf-ring i{position:absolute;top:8%;left:12%;width:16px;height:16px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 5px rgba(255,46,147,.2)}
+.pf-tag{position:absolute;left:-4%;bottom:10%;background:var(--ink);color:var(--white);font-weight:700;font-size:.9rem;padding:.55rem 1rem;border-radius:999px;box-shadow:0 14px 30px -14px rgba(10,18,80,.6)}
+.phero .pf{margin-top:1rem}
+@media (max-width:880px){.pf{width:min(82%,380px)}}
+@media (prefers-reduced-motion:reduce){.pf-ring{animation:none}}
