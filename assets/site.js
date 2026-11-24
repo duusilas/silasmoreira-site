@@ -1,0 +1,188 @@
+/* silasmoreira.tech — comportamento partilhado (v3) */
+{
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(pointer:fine)').matches;
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  };
+  const toastEl = document.createElement('div'); toastEl.className = 'toast'; toastEl.setAttribute('role', 'status'); document.body.appendChild(toastEl);
+  let toastT; const toast = msg => { toastEl.textContent = msg; toastEl.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove('show'), 2400); };
+
+  /* cabeçalho + progresso */
+  const top = $('.top'), rp = $('.read-progress');
+  const onScroll = () => {
+    const h = document.documentElement, y = h.scrollTop;
+    top && top.classList.toggle('scrolled', y > 10);
+    rp && rp.style.setProperty('--p', (y / Math.max(1, h.scrollHeight - h.clientHeight)).toFixed(4));
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  /* menu móvel */
+  const mb = $('.menu-btn');
+  mb && mb.addEventListener('click', () => {
+    const open = top.classList.toggle('open');
+    mb.setAttribute('aria-expanded', open); mb.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  /* revelação + contadores */
+  const countUp = el => {
+    const end = +el.dataset.count, dur = 1400, t0 = performance.now();
+    const step = now => { const k = Math.min(1, (now - t0) / dur); el.textContent = Math.round(end * (1 - (1 - k) ** 3)); if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  };
+  if ('IntersectionObserver' in window && !reduce) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      $$('[data-count]', e.target).forEach(countUp);
+      io.unobserve(e.target);
+    }), { rootMargin: '0px 0px -8% 0px' });
+    $$('.reveal').forEach(el => io.observe(el));
+  } else $$('.reveal').forEach(el => el.classList.add('in'));
+
+  /* palavra que roda */
+  $$('.rotator').forEach(r => {
+    const items = $$('span', r); if (items.length < 2 || reduce) { items[0] && items[0].classList.add('on'); return; }
+    let i = 0; items[0].classList.add('on');
+    setInterval(() => {
+      const cur = items[i]; cur.classList.remove('on'); cur.classList.add('out');
+      setTimeout(() => cur.classList.remove('out'), 500);
+      i = (i + 1) % items.length; items[i].classList.add('on');
+    }, 2200);
+  });
+
+  /* spotlight */
+  if (fine) $$('.spot').forEach(c => c.addEventListener('pointermove', e => {
+    const r = c.getBoundingClientRect();
+    c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }));
+
+  /* parallax da órbita */
+  const orbit = $('.orbit');
+  if (orbit && fine && !reduce) {
+    const hero = orbit.closest('section');
+    hero.addEventListener('pointermove', e => {
+      const r = hero.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      orbit.style.transform = `perspective(900px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+    });
+    hero.addEventListener('pointerleave', () => orbit.style.transform = '');
+  }
+
+  /* carrosséis */
+  $$('.car').forEach(car => {
+    const track = $('.car-track', car), prev = $('[data-prev]', car), next = $('[data-next]', car), dots = $('.car-dots', car), count = $('.car-count', car);
+    const items = [...track.children];
+    if (dots) dots.innerHTML = items.map(() => '<i></i>').join('');
+    const idx = () => {
+      const x = track.scrollLeft; let best = 0, d = Infinity;
+      items.forEach((it, i) => { const dd = Math.abs(it.offsetLeft - track.offsetLeft - x); if (dd < d) { d = dd; best = i; } });
+      return best;
+    };
+    const go = i => { const it = items[Math.max(0, Math.min(items.length - 1, i))]; track.scrollTo({ left: it.offsetLeft - track.offsetLeft, behavior: reduce ? 'auto' : 'smooth' }); };
+    const sync = () => {
+      const i = idx(), max = track.scrollWidth - track.clientWidth - 4;
+      if (prev) prev.disabled = track.scrollLeft <= 4;
+      if (next) next.disabled = track.scrollLeft >= max;
+      if (dots) [...dots.children].forEach((d, k) => d.classList.toggle('on', k === i));
+      if (count) count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(items.length).padStart(2, '0')}`;
+    };
+    prev && prev.addEventListener('click', () => go(idx() - 1));
+    next && next.addEventListener('click', () => go(idx() + 1));
+    track.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+    track.tabIndex = 0;
+    track.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { e.preventDefault(); go(idx() + 1); } if (e.key === 'ArrowLeft') { e.preventDefault(); go(idx() - 1); } });
+    /* arrastar com o rato */
+    if (fine) {
+      let down = false, sx = 0, sl = 0, moved = false;
+      track.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; moved = false; sx = e.clientX; sl = track.scrollLeft; });
+      addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - sx; if (Math.abs(dx) > 5) { moved = true; track.classList.add('drag'); } track.scrollLeft = sl - dx; });
+      addEventListener('pointerup', () => { if (!down) return; down = false; if (moved) { track.classList.remove('drag'); go(idx()); } });
+      track.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+    }
+    addEventListener('resize', sync); sync();
+  });
+
+  /* tabs */
+  $$('[data-tabs]').forEach(w => {
+    const tabs = $$('[role="tab"]', w), panels = $$('[role="tabpanel"]', w), bar = $$('.layer-bar i', w);
+    const sel = i => {
+      tabs.forEach((t, k) => { t.setAttribute('aria-selected', k === i); t.tabIndex = k === i ? 0 : -1; });
+      panels.forEach((p, k) => p.hidden = k !== i);
+      bar.forEach((b, k) => b.classList.toggle('on', k <= i));
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => sel(i));
+      t.addEventListener('keydown', e => {
+        const d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (d) { e.preventDefault(); const n = (i + d + tabs.length) % tabs.length; sel(n); tabs[n].focus(); }
+      });
+    });
+    sel(0);
+  });
+
+  /* índice da página que acompanha o scroll */
+  const toc = $$('.scroll-toc a');
+  if (toc.length && 'IntersectionObserver' in window) {
+    const map = new Map(toc.map(a => [a.getAttribute('href').split('#')[1], a]));
+    const tio = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { toc.forEach(a => a.classList.remove('on')); const a = map.get(e.target.id); a && a.classList.add('on'); }
+    }), { rootMargin: '-40% 0px -55% 0px' });
+    map.forEach((a, id) => { const s = document.getElementById(id); s && tio.observe(s); });
+  }
+
+  /* copiar */
+  $$('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.copy); toast(b.dataset.done || 'Copiado'); }
+    catch (e) { toast(b.dataset.copy); }
+  }));
+
+  /* privacidade */
+  const dlg = $('dialog.privacy');
+  $$('[data-open-privacy]').forEach(b => b.addEventListener('click', () => dlg && dlg.showModal()));
+  dlg && dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+  /* consentimento de estatísticas: o Umami só carrega depois de "Aceitar" */
+  const UMAMI_ID = document.documentElement.dataset.umami || '';
+  const loadUmami = () => {
+    if (!UMAMI_ID || document.getElementById('umami')) return;
+    const s = document.createElement('script'); s.id = 'umami'; s.defer = true; s.src = 'https://cloud.umami.is/script.js'; s.dataset.websiteId = UMAMI_ID; document.head.appendChild(s);
+  };
+  const consent = $('.consent'), choice = store.get('sm-analytics');
+  if (choice === 'yes') loadUmami(); else if (!choice && consent) setTimeout(() => consent.classList.add('show'), 1800);
+  $$('[data-consent]').forEach(b => b.addEventListener('click', () => {
+    store.set('sm-analytics', b.dataset.consent); consent && consent.classList.remove('show'); if (b.dataset.consent === 'yes') loadUmami();
+  }));
+  $$('[data-open-consent]').forEach(b => b.addEventListener('click', () => consent && consent.classList.add('show')));
+
+  /* idioma */
+  const lang = store.get('sm-lang') || 'pt';
+  $$('.langs button').forEach(b => {
+    b.setAttribute('aria-pressed', b.dataset.lang === lang);
+    b.addEventListener('click', () => { store.set('sm-lang', b.dataset.lang); $$('.langs button').forEach(x => x.setAttribute('aria-pressed', x === b)); if (b.dataset.lang !== 'pt') toast('Versão neste idioma em preparação'); });
+  });
+
+  /* formulário: assunto a partir do link e envio */
+  const sel = $('#assunto');
+  if (sel) {
+    const q = new URLSearchParams(location.search);
+    const map = { speaker: 'Convite para palestra', moderator: 'Moderação de debate', host: 'Mestre de cerimónias' };
+    const want = map[q.get('formato')] || ({ palestra: 'Convite para palestra', oportunidade: 'Oportunidade profissional' })[q.get('assunto')];
+    if (want) sel.value = want;
+    const subj = $('input[name="_subject"]');
+    sel.addEventListener('change', () => subj && (subj.value = 'silasmoreira.tech: ' + sel.value));
+  }
+  $$('form.form').forEach(f => f.addEventListener('submit', e => {
+    window.umami && umami.track('contacto-enviado', { origem: f.dataset.track || '' });
+    if (!/silasmoreira\.tech$/.test(location.hostname)) {   // pré-visualização: o envio real só funciona no domínio
+      e.preventDefault();
+      const note = $('.form-note', f); note && note.classList.add('show');
+    }
+  }));
+
+  $$('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+}
