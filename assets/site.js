@@ -118,6 +118,19 @@
     addEventListener('resize', sync); sync();
   });
 
+  /* menu suspenso de idioma */
+  $$('.lang-dd').forEach(dd => {
+    const btn = $('.lang-btn', dd), links = $$('.langs a', dd);
+    const set = o => { dd.classList.toggle('open', o); btn.setAttribute('aria-expanded', o); };
+    btn.addEventListener('click', e => { e.stopPropagation(); const o = !dd.classList.contains('open'); set(o); if (o) (links.find(a => !a.classList.contains('on')) || links[0]).focus({ preventScroll: true }); });
+    document.addEventListener('click', e => { if (!dd.contains(e.target)) set(false); });
+    dd.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && dd.classList.contains('open')) { set(false); btn.focus(); }
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); const i = links.indexOf(document.activeElement); const n = (i + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length; if (!dd.classList.contains('open')) set(true); links[n].focus(); }
+    });
+    dd.addEventListener('focusout', e => { if (!dd.contains(e.relatedTarget)) set(false); });
+  });
+
   /* percurso em órbita: o cartão ao centro fica ativo */
   $$('[data-orb]').forEach(orb => {
     const track = $('.orb-track', orb), items = [...track.children], prev = $('[data-prev]', orb), next = $('[data-next]', orb);
