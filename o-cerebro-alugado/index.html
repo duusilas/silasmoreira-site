@@ -38,9 +38,14 @@
   .eb-tag{display:inline-block;background:var(--white);color:#C4005C;border:3px solid var(--pink);font-weight:800;letter-spacing:.06em;font-size:.9rem;padding:.25rem .7rem;transform:rotate(-3deg)}
   .eb-hero h1{font-size:clamp(2.8rem,6.4vw,5.2rem);line-height:.95;letter-spacing:-.035em;margin:1rem 0 1rem}
   .eb-hero h1 span{color:var(--neon)}
-  .eb-hero .lede{font-size:clamp(1.1rem,1.6vw,1.3rem);color:rgba(255,255,255,.82);max-width:34ch;margin:0 0 2rem}
+  .eb-hero .lede{font-size:clamp(1.1rem,1.6vw,1.3rem);color:rgba(255,255,255,.92);max-width:34ch;margin:0 0 2rem}
   .eb-form{max-width:470px;box-shadow:12px 12px 0 var(--pink)}
-  .eb-form .check{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;line-height:1.45;color:var(--ink-2)}
+  .eb-form .check{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;line-height:1.45;color:var(--ink)}
+  .eb-form .field input{background:var(--white);border:2px solid #B9C0DE}
+  .eb-form .field input:hover{border-color:#8E97C4}
+  .eb-form .field input:focus{border-color:var(--cobalt);box-shadow:0 0 0 4px rgba(31,43,255,.15)}
+  .eb-form .field label{color:var(--ink)}
+  .eb-form .hint{color:#3A4275}
   .eb-form .check input{width:20px;height:20px;margin-top:.1rem;flex:none;accent-color:var(--cobalt)}
   .eb-form .btn{justify-self:stretch;justify-content:center}
   .eb-done{display:none}
@@ -61,10 +66,11 @@
   .eb-pinksec{background:#D6006A;color:var(--white)}
 
   /* mockup do livro */
-  .eb-book{justify-self:center;perspective:1400px;width:min(330px,80%)}
+  .eb-book{justify-self:center;perspective:1400px;width:min(330px,80%);position:relative}
+  .eb-book::before{content:"";position:absolute;inset:-18% -22%;background:radial-gradient(closest-side,rgba(43,255,136,.35),rgba(31,43,255,.25) 55%,transparent 75%);filter:blur(8px);pointer-events:none}
   .eb-book .b{position:relative;aspect-ratio:794/1123;transform:rotateY(-18deg) rotateX(4deg);transform-style:preserve-3d;transition:transform .6s var(--ease)}
   .eb-book:hover .b{transform:rotateY(-8deg) rotateX(2deg)}
-  .eb-book .face{position:absolute;inset:0;background:var(--ink);border-radius:3px 8px 8px 3px;padding:9% 9% 8%;display:flex;flex-direction:column;gap:.6rem;overflow:hidden;box-shadow:inset 6px 0 10px -4px rgba(0,0,0,.6),0 40px 60px -25px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.12)}
+  .eb-book .face{position:absolute;inset:0;background:var(--ink);border-radius:3px 8px 8px 3px;padding:9% 9% 8%;display:flex;flex-direction:column;gap:.6rem;overflow:hidden;box-shadow:inset 6px 0 10px -4px rgba(0,0,0,.6),14px 14px 0 var(--neon),0 50px 70px -20px rgba(0,0,0,.8);border:2px solid rgba(255,255,255,.55)}
   .eb-book .face::after{content:"";position:absolute;inset:0 auto 0 7%;width:2px;background:rgba(255,255,255,.12)}
   .eb-book .pages{position:absolute;top:2%;bottom:2%;right:-14px;width:16px;background:repeating-linear-gradient(90deg,#fff 0 1px,#E4E7F2 1px 2px);transform:rotateY(90deg) translateZ(-8px);transform-origin:left;border-radius:0 3px 3px 0}
   .eb-book .ct{font-weight:800;font-size:clamp(2rem,4.4vw,2.9rem);line-height:.9;letter-spacing:-.04em;margin-top:8%}
