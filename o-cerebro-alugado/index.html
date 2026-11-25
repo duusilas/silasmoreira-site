@@ -47,6 +47,19 @@
   .eb-form.done .eb-fields{display:none} .eb-form.done .eb-done{display:grid;gap:.8rem}
   .eb-done h2{font-size:1.8rem;margin:0} .eb-done p{margin:0;color:var(--ink-2)}
 
+  .eb-blob{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none}
+  .eb-blob.b1{width:420px;height:420px;background:var(--cobalt);opacity:.55;right:-120px;top:-140px}
+  .eb-blob.b2{width:300px;height:300px;background:var(--pink);opacity:.35;left:30%;bottom:-180px}
+  .eb-blob.b3{width:220px;height:220px;background:var(--neon);opacity:.18;left:-80px;top:40%}
+  .eb-deco{position:absolute;pointer-events:none}
+  .eb-strip{background:var(--neon);color:var(--ink);overflow:hidden;white-space:nowrap;font-weight:800;font-size:clamp(1.1rem,2vw,1.4rem);letter-spacing:.03em;padding:.9rem 0}
+  .eb-strip .run{display:inline-block;animation:eb-run 38s linear infinite}
+  .eb-strip span{padding:0 1.1rem} .eb-strip i{font-style:normal;color:#C4005C}
+  @keyframes eb-run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .eb-pinkbg{background:#FFE6F2}
+  .eb-greenbg{background:#E3FFF0}
+  .eb-pinksec{background:#D6006A;color:var(--white)}
+
   /* mockup do livro */
   .eb-book{justify-self:center;perspective:1400px;width:min(330px,80%)}
   .eb-book .b{position:relative;aspect-ratio:794/1123;transform:rotateY(-18deg) rotateX(4deg);transform-style:preserve-3d;transition:transform .6s var(--ease)}
@@ -72,11 +85,12 @@
 
   /* partes */
   .eb-parts{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
-  .eb-parts li{background:var(--white);border-radius:20px;padding:1.3rem 1.4rem;font-weight:700;font-size:1.12rem;line-height:1.25;display:flex;gap:.9rem;align-items:center}
+  .eb-parts li{border-radius:20px;padding:1.4rem 1.4rem;font-weight:800;font-size:1.2rem;line-height:1.2;display:flex;gap:.9rem;align-items:center;min-height:96px}
+  .eb-parts li:nth-child(3n+1){background:var(--neon);color:var(--ink)}
+  .eb-parts li:nth-child(3n+2){background:#D6006A;color:var(--white)}
+  .eb-parts li:nth-child(3n){background:var(--cobalt);color:var(--white)}
   .eb-parts li span{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;font-weight:800}
-  .eb-parts li:nth-child(3n+1) span{background:var(--neon);color:var(--ink)}
-  .eb-parts li:nth-child(3n+2) span{background:var(--pink);color:var(--white)}
-  .eb-parts li:nth-child(3n) span{background:var(--cobalt);color:var(--white)}
+  .eb-parts li span{background:var(--white);color:var(--ink)}
 
   /* autor */
   .eb-author{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.5rem,4vw,2.5rem);align-items:center}
@@ -85,7 +99,7 @@
 
   .eb-final{text-align:center}
   .eb-final h2{font-size:clamp(2rem,4.4vw,3.2rem);max-width:20ch;margin:0 auto 1.6rem}
-  .eb-final h2 span{color:var(--neon)}
+  .eb-final h2 span{color:var(--ink)}
 
   @media (max-width:860px){
     .eb-grid,.eb-two{grid-template-columns:minmax(0,1fr)}
@@ -93,8 +107,9 @@
     .eb-parts{grid-template-columns:minmax(0,1fr)}
     .eb-author{grid-template-columns:minmax(0,1fr)}
     .eb-form{box-shadow:8px 8px 0 var(--pink)}
+    .eb-deco{display:none}
   }
-  @media (prefers-reduced-motion:reduce){.eb-book .b{transition:none}}
+  @media (prefers-reduced-motion:reduce){.eb-book .b{transition:none}.eb-strip .run{animation:none}}
 </style>
 </head>
 <body>
@@ -109,6 +124,11 @@
 <main id="main">
 
   <section class="eb-hero" aria-labelledby="h1">
+    <span class="eb-blob b1" aria-hidden="true"></span><span class="eb-blob b2" aria-hidden="true"></span><span class="eb-blob b3" aria-hidden="true"></span>
+    <svg class="eb-deco" aria-hidden="true" style="left:44%;top:12%;opacity:.55" width="20" height="20" stroke="#2BFF88" stroke-width="2.5" stroke-linecap="round"><path d="M10 2v16M2 10h16"/></svg>
+    <svg class="eb-deco" aria-hidden="true" style="right:6%;bottom:14%;opacity:.5" width="20" height="20" stroke="#FF2E93" stroke-width="2.5" stroke-linecap="round"><path d="M10 2v16M2 10h16"/></svg>
+    <svg class="eb-deco" aria-hidden="true" style="left:47%;bottom:10%;opacity:.45" width="150" height="30" fill="none" stroke="#FF2E93" stroke-width="3" stroke-linecap="round"><path d="M3 15 q15 -14 30 0 t30 0 t30 0 t30 0"/></svg>
+    <svg class="eb-deco" aria-hidden="true" style="right:30%;top:8%;opacity:.25" width="230" height="230" fill="none"><circle cx="115" cy="115" r="111" stroke="#2BFF88" stroke-width="2" stroke-dasharray="6 10"/></svg>
     <div class="wrap eb-grid">
       <div>
         <p class="crumbs"><a href="/">Início</a> / E-book</p>
@@ -152,7 +172,9 @@
     </div>
   </section>
 
-  <section class="sec" aria-labelledby="t-contrato">
+  <div class="eb-strip" aria-hidden="true"><div class="run"><span>ALUGA-SE: UM CÉREBRO</span><i>●</i><span>BOM ESTADO</span><i>●</i><span>POUCO USADO</span><i>●</i><span>DISPONÍVEL 24 H</span><i>●</i><span>TRATAR DIRETO NO FEED</span><i>●</i><span>ALUGA-SE: UM CÉREBRO</span><i>●</i><span>BOM ESTADO</span><i>●</i><span>POUCO USADO</span><i>●</i><span>DISPONÍVEL 24 H</span><i>●</i><span>TRATAR DIRETO NO FEED</span><i>●</i></div></div>
+
+  <section class="sec eb-pinkbg" aria-labelledby="t-contrato">
     <div class="wrap eb-two">
       <div>
         <h2 id="t-contrato" style="font-size:clamp(2rem,4.4vw,3.2rem);line-height:1;letter-spacing:-.03em;margin:0">Você assinou um contrato <span class="eb-mark">sem ler.</span></h2>
@@ -166,7 +188,7 @@
     </div>
   </section>
 
-  <section class="sec paper" aria-labelledby="t-dentro">
+  <section class="sec" aria-labelledby="t-dentro">
     <div class="wrap">
       <h2 id="t-dentro" style="font-size:clamp(2rem,4.4vw,3.2rem);line-height:1;letter-spacing:-.03em;margin:0">O que tem dentro</h2>
       <p style="color:var(--ink-2);font-size:1.1rem;margin:.8rem 0 0">Seis partes, capítulos de três minutos e mais de 30 referências.</p>
@@ -181,7 +203,7 @@
     </div>
   </section>
 
-  <section class="sec" aria-labelledby="t-autor">
+  <section class="sec eb-greenbg" aria-labelledby="t-autor">
     <div class="wrap eb-author">
       <picture><source srcset="/assets/silas-moreira-480.webp" type="image/webp"><img src="/assets/silas-moreira-480.jpg" alt="Silas Moreira" width="150" height="150" loading="lazy"></picture>
       <div>
@@ -191,7 +213,7 @@
     </div>
   </section>
 
-  <section class="sec ink eb-final" aria-labelledby="t-final">
+  <section class="sec eb-pinksec eb-final" aria-labelledby="t-final">
     <div class="wrap">
       <h2 id="t-final">O cérebro é seu. <span>Não alugue sem ler o contrato.</span></h2>
       <a class="btn neon" href="#baixar">Baixar o e-book grátis</a>
