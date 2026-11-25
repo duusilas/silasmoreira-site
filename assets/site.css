@@ -854,3 +854,24 @@ html[lang="zh-Hans"] h1,html[lang="zh-Hans"] h2,html[lang="zh-Hans"] h3{letter-s
   .top.open .lang-dd .langs .lang.on::after{display:none}
 }
 @media (prefers-reduced-motion:reduce){.lang-dd .langs,.lang-btn .chev{transition:none}}
+
+/* e-book: faixa no topo e cartão no fim dos conteúdos */
+.ebar{background:var(--ink);color:#fff;font-size:.9rem;line-height:1.35}
+.ebar .wrap{display:flex;align-items:center;gap:.8rem;min-height:42px;padding-top:.45rem;padding-bottom:.45rem}
+.ebar a{flex:1;display:flex;align-items:center;gap:.7rem;color:inherit;text-decoration:none;min-width:0}
+.ebar b{flex:none;background:var(--neon);color:var(--ink);font-weight:800;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .55rem;border-radius:999px}
+.ebar span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:rgba(255,255,255,.9)}
+.ebar em{flex:none;font-style:normal;font-weight:800;color:var(--neon)}
+.ebar a:hover span{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.ebar button{flex:none;background:none;border:0;color:rgba(255,255,255,.75);font-size:1.4rem;line-height:1;width:32px;height:32px;border-radius:50%;cursor:pointer}
+.ebar button:hover{background:rgba(255,255,255,.12);color:#fff}
+@media (max-width:640px){.ebar span{display:none}.ebar a{justify-content:flex-start}}
+.ebook-cta{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(1rem,3vw,2rem);align-items:center;background:var(--ink);color:#fff;border-radius:28px;padding:clamp(1.4rem,3vw,2rem);text-decoration:none;box-shadow:10px 10px 0 var(--neon);transition:transform .35s var(--spring)}
+.ebook-cta:hover{transform:translateY(-4px)}
+.ebook-cta .bk{width:78px;aspect-ratio:794/1123;border-radius:3px 7px 7px 3px;background:#0B1B4D;border:2px solid rgba(255,255,255,.6);display:grid;place-items:center;transform:rotate(-6deg);box-shadow:6px 6px 0 var(--pink)}
+.ebook-cta .bk svg{width:70%}
+.ebook-cta small{display:block;color:var(--neon);font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:.78rem}
+.ebook-cta strong{display:block;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.1;margin:.25rem 0 .35rem}
+.ebook-cta p{margin:0;color:rgba(255,255,255,.82)}
+.ebook-cta .go{background:var(--neon);color:var(--ink);font-weight:800;padding:.8rem 1.2rem;border-radius:999px;white-space:nowrap}
+@media (max-width:640px){.ebook-cta{grid-template-columns:auto minmax(0,1fr)}.ebook-cta .go{grid-column:1/-1;text-align:center}}

@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+# Os PDFs dos e-books entram pela página de inscrição, não diretamente pela pesquisa
+Disallow: /o-cerebro-alugado/*.pdf$
+Disallow: /en/brain-for-rent/*.pdf$
 
 Sitemap: https://silasmoreira.tech/sitemap.xml

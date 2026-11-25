@@ -218,13 +218,32 @@
     const subj = $('input[name="_subject"]');
     sel.addEventListener('change', () => subj && (subj.value = 'silasmoreira.tech: ' + sel.value));
   }
-  $$('form.form').forEach(f => f.addEventListener('submit', e => {
+  $$('form.form:not(.eb-form)').forEach(f => f.addEventListener('submit', e => {
     window.umami && umami.track('contacto-enviado', { origem: f.dataset.track || '' });
     if (!/silasmoreira\.tech$/.test(location.hostname)) {   // pré-visualização: o envio real só funciona no domínio
       e.preventDefault();
       const note = $('.form-note', f); note && note.classList.add('show');
     }
   }));
+
+    /* faixa do e-book: discreta, some ao fechar (lembra a escolha) e não aparece nas páginas do próprio e-book */
+  {
+    const EB = ({
+      pt: { href: '/o-cerebro-alugado/', tag: 'E-book grátis', t: 'O cérebro alugado: o que as redes e a IA fazem à nossa atenção.', go: 'Ler agora', x: 'Fechar aviso' },
+      en: { href: '/en/brain-for-rent/', tag: 'Free e-book', t: 'Brain for Rent: what social media and AI do to our attention.', go: 'Read it', x: 'Close notice' },
+      es: { href: '/en/brain-for-rent/', tag: 'E-book gratis (en inglés)', t: 'Brain for Rent: lo que las redes y la IA hacen con nuestra atención.', go: 'Leer', x: 'Cerrar aviso' },
+      zh: { href: '/en/brain-for-rent/', tag: '免费电子书（英文）', t: 'Brain for Rent：社交媒体和 AI 如何影响我们的注意力。', go: '阅读', x: '关闭' }
+    })[LANG];
+    const onBook = /\/(o-cerebro-alugado|brain-for-rent)\//.test(location.pathname);
+    const top = $('header.top');
+    if (EB && top && !onBook && store.get('sm-ebook-bar') !== 'closed') {
+      const bar = document.createElement('div');
+      bar.className = 'ebar';
+      bar.innerHTML = `<div class="wrap"><a href="${EB.href}" data-umami-event="ebook-faixa"><b>${EB.tag}</b><span>${EB.t}</span><em>${EB.go} →</em></a><button type="button" aria-label="${EB.x}">×</button></div>`;
+      top.parentNode.insertBefore(bar, top);
+      $('button', bar).addEventListener('click', () => { store.set('sm-ebook-bar', 'closed'); bar.remove(); });
+    }
+  }
 
   $$('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
 }
