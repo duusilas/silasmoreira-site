@@ -30,16 +30,16 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Book","name":"O cérebro alugado","alternativeHeadline":"Como as redes sociais e a inteligência artificial estão afetando nossa atenção, memória e saúde mental","author":{"@id":"https://silasmoreira.tech/#silas","@type":"Person","name":"Silas Moreira","jobTitle":"Product Manager"},"inLanguage":"pt-BR","bookFormat":"https://schema.org/EBook","numberOfPages":32,"isAccessibleForFree":true,"url":"https://silasmoreira.tech/o-cerebro-alugado/","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://silasmoreira.tech/"},{"@type":"ListItem","position":2,"name":"O cérebro alugado","item":"https://silasmoreira.tech/o-cerebro-alugado/"}]}]}</script>
 <style>
   /* E-book «O cérebro alugado»: personalidade da capa, resto do site calmo */
-  .eb-hero{position:relative;overflow:hidden;background:var(--ink);color:var(--white);padding:clamp(3rem,7vw,5.5rem) 0 clamp(3.5rem,7vw,6rem)}
+  .eb-hero{position:relative;overflow:hidden;background:#1F2BFF;color:var(--white);padding:clamp(3rem,6vw,4.5rem) 0 clamp(3.5rem,6vw,5rem)}
   .eb-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.14) 1.4px,transparent 1.6px) 0 0/22px 22px;-webkit-mask:radial-gradient(70% 80% at 85% 20%,#000,transparent 70%);mask:radial-gradient(70% 80% at 85% 20%,#000,transparent 70%);pointer-events:none}
-  .eb-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(2rem,6vw,5rem);align-items:center}
+  .eb-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:center}
   .eb-hero .crumbs{font-size:.9rem;color:rgba(255,255,255,.7);margin:0 0 1.2rem}
   .eb-hero .crumbs a{color:inherit;text-underline-offset:3px}
   .eb-tag{display:inline-block;background:var(--white);color:#C4005C;border:3px solid var(--pink);font-weight:800;letter-spacing:.06em;font-size:.9rem;padding:.25rem .7rem;transform:rotate(-3deg)}
-  .eb-hero h1{font-size:clamp(2.8rem,6.4vw,5.2rem);line-height:.95;letter-spacing:-.035em;margin:1rem 0 1rem}
+  .eb-hero h1{font-size:clamp(2.6rem,5.2vw,4.3rem);line-height:.95;letter-spacing:-.035em;margin:0 0 1rem}
   .eb-hero h1 span{color:var(--neon)}
-  .eb-hero .lede{font-size:clamp(1.1rem,1.6vw,1.3rem);color:rgba(255,255,255,.92);max-width:34ch;margin:0 0 2rem}
-  .eb-form{max-width:470px;box-shadow:12px 12px 0 var(--pink)}
+  .eb-hero .lede{font-size:clamp(1.1rem,1.6vw,1.3rem);color:#fff;max-width:34ch;margin:0 0 2rem}
+  .eb-form{max-width:460px;box-shadow:12px 12px 0 var(--ink)}
   .eb-form .check{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;line-height:1.45;color:var(--ink)}
   .eb-form .field input{background:var(--white);border:2px solid #B9C0DE}
   .eb-form .field input:hover{border-color:#8E97C4}
@@ -53,8 +53,8 @@
   .eb-done h2{font-size:1.8rem;margin:0} .eb-done p{margin:0;color:var(--ink-2)}
 
   .eb-blob{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none}
-  .eb-blob.b1{width:420px;height:420px;background:var(--cobalt);opacity:.55;right:-120px;top:-140px}
-  .eb-blob.b2{width:300px;height:300px;background:var(--pink);opacity:.35;left:30%;bottom:-180px}
+  .eb-blob.b1{width:420px;height:420px;background:var(--ink);opacity:.45;right:-120px;top:-140px}
+  .eb-blob.b2{width:300px;height:300px;background:var(--pink);opacity:.45;left:30%;bottom:-180px}
   .eb-blob.b3{width:220px;height:220px;background:var(--neon);opacity:.18;left:-80px;top:40%}
   .eb-deco{position:absolute;pointer-events:none}
   .eb-strip{background:var(--neon);color:var(--ink);overflow:hidden;white-space:nowrap;font-weight:800;font-size:clamp(1.1rem,2vw,1.4rem);letter-spacing:.03em;padding:.9rem 0}
@@ -66,20 +66,20 @@
   .eb-pinksec{background:#D6006A;color:var(--white)}
 
   /* mockup do livro */
-  .eb-book{justify-self:center;perspective:1400px;width:min(330px,80%);position:relative}
-  .eb-book::before{content:"";position:absolute;inset:-18% -22%;background:radial-gradient(closest-side,rgba(43,255,136,.35),rgba(31,43,255,.25) 55%,transparent 75%);filter:blur(8px);pointer-events:none}
-  .eb-book .b{position:relative;aspect-ratio:794/1123;transform:rotateY(-18deg) rotateX(4deg);transform-style:preserve-3d;transition:transform .6s var(--ease)}
+  .eb-book{justify-self:center;perspective:1400px;width:min(400px,88%);position:relative}
+  .eb-book::before{content:"";position:absolute;inset:-18% -22%;background:radial-gradient(closest-side,rgba(255,255,255,.28),rgba(255,255,255,.08) 55%,transparent 75%);filter:blur(8px);pointer-events:none}
+  .eb-book .b{container-type:inline-size;position:relative;aspect-ratio:794/1123;transform:rotateY(-18deg) rotateX(4deg);transform-style:preserve-3d;transition:transform .6s var(--ease)}
   .eb-book:hover .b{transform:rotateY(-8deg) rotateX(2deg)}
   .eb-book .face{position:absolute;inset:0;background:var(--ink);border-radius:3px 8px 8px 3px;padding:9% 9% 8%;display:flex;flex-direction:column;gap:.6rem;overflow:hidden;box-shadow:inset 6px 0 10px -4px rgba(0,0,0,.6),14px 14px 0 var(--neon),0 50px 70px -20px rgba(0,0,0,.8);border:2px solid rgba(255,255,255,.55)}
   .eb-book .face::after{content:"";position:absolute;inset:0 auto 0 7%;width:2px;background:rgba(255,255,255,.12)}
   .eb-book .pages{position:absolute;top:2%;bottom:2%;right:-14px;width:16px;background:repeating-linear-gradient(90deg,#fff 0 1px,#E4E7F2 1px 2px);transform:rotateY(90deg) translateZ(-8px);transform-origin:left;border-radius:0 3px 3px 0}
-  .eb-book .ct{font-weight:800;font-size:clamp(2rem,4.4vw,2.9rem);line-height:.9;letter-spacing:-.04em;margin-top:8%}
+  .eb-book .ct{font-weight:800;font-size:13cqw;line-height:.9;letter-spacing:-.04em;margin-top:8%}
   .eb-book .ct span{color:var(--neon)}
-  .eb-book .cs{font-size:.78rem;line-height:1.35;color:rgba(255,255,255,.75)}
+  .eb-book .cs{font-size:3.7cqw;line-height:1.35;color:rgba(255,255,255,.75)}
   .eb-book .art{flex:1;display:flex;align-items:center;justify-content:center;position:relative}
   .eb-book .art svg{width:78%}
-  .eb-book .art .eb-tag{position:absolute;top:4%;right:-2%;transform:rotate(9deg);font-size:.8rem}
-  .eb-book .au{font-weight:800;font-size:.95rem}
+  .eb-book .art .eb-tag{position:absolute;top:4%;right:-2%;transform:rotate(9deg);font-size:3.4cqw}
+  .eb-book .au{font-weight:800;font-size:4.3cqw}
 
   /* contrato */
   .eb-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,4.5rem);align-items:center}
@@ -101,7 +101,10 @@
   /* autor */
   .eb-author{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.5rem,4vw,2.5rem);align-items:center}
   .eb-author img{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:50% 30%;box-shadow:0 0 0 5px var(--white),0 0 0 9px var(--neon)}
-  .eb-author p{color:var(--ink-2);font-size:1.1rem;margin:.6rem 0 0;max-width:52ch}
+  .eb-author p{color:var(--ink-2);font-size:1.1rem;margin:.6rem 0 0;max-width:60ch}
+  .eb-author .role{font-weight:700;color:var(--ink);margin-top:.2rem}
+  .eb-author .in{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.2rem;background:var(--ink);color:var(--white);font-weight:700;text-decoration:none;padding:.7rem 1.1rem;border-radius:999px}
+  .eb-author .in:hover{background:var(--cobalt)}
 
   .eb-final{text-align:center}
   .eb-final h2{font-size:clamp(2rem,4.4vw,3.2rem);max-width:20ch;margin:0 auto 1.6rem}
@@ -112,7 +115,7 @@
     .eb-book{order:-1;width:min(240px,62%)}
     .eb-parts{grid-template-columns:minmax(0,1fr)}
     .eb-author{grid-template-columns:minmax(0,1fr)}
-    .eb-form{box-shadow:8px 8px 0 var(--pink)}
+    .eb-form{box-shadow:8px 8px 0 var(--ink)}
     .eb-deco{display:none}
   }
   @media (prefers-reduced-motion:reduce){.eb-book .b{transition:none}.eb-strip .run{animation:none}}
@@ -138,7 +141,6 @@
     <div class="wrap eb-grid">
       <div>
         <p class="crumbs"><a href="/">Início</a> / E-book</p>
-        <span class="eb-tag">ALUGA-SE: UM CÉREBRO</span>
         <h1 id="h1">O cérebro <span>alugado</span></h1>
         <p class="lede">Como as redes sociais e a IA estão afetando nossa atenção, memória e saúde mental. Grátis, em PDF.</p>
 
@@ -214,7 +216,10 @@
       <picture><source srcset="/assets/silas-moreira-480.webp" type="image/webp"><img src="/assets/silas-moreira-480.jpg" alt="Silas Moreira" width="150" height="150" loading="lazy"></picture>
       <div>
         <h2 id="t-autor" style="font-size:clamp(1.8rem,3.4vw,2.4rem);margin:0">Silas Moreira</h2>
-        <p>Product Manager. Passou anos nas reuniões em que se decide a cor de um botão e o horário de uma notificação, e resolveu contar o que viu.</p>
+        <p class="role">Product Manager</p>
+        <p>Trabalho com produto digital no Brasil e em Portugal: pagamentos, super apps, marketplaces, retail media e plataformas internas, em empresas como Ame Digital, Magalu e Sonae. Passei muitas horas nas reuniões em que se decide a cor de um botão, o texto de uma notificação e o horário em que ela chega.</p>
+        <p>Este livro nasceu dessa experiência. Não é contra a tecnologia: é um convite para entender as escolhas de design que disputam a nossa atenção e para usar as telas com mais intenção. Também falo sobre isso em palestras e no LinkedIn.</p>
+        <a class="in" href="https://www.linkedin.com/in/silasmoreira/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.8-1.7-2.8-1.71 0-1.97 1.33-1.97 2.7V21h-4z"/></svg>Conectar no LinkedIn</a>
       </div>
     </div>
   </section>
