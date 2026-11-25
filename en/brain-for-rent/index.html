@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" data-umami="1f7479ff-8ca7-496d-86fa-cc7b190c873f">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brain for Rent — free e-book on social media, AI and mental health</title>
+<meta name="description" content="Free e-book: how social media and artificial intelligence affect your attention, memory and mental health. Psychology and neuroscience in plain language, with 30+ references.">
+<link rel="canonical" href="https://silasmoreira.tech/en/brain-for-rent/">
+<link rel="alternate" hreflang="pt-BR" href="https://silasmoreira.tech/o-cerebro-alugado/">
+<link rel="alternate" hreflang="en" href="https://silasmoreira.tech/en/brain-for-rent/">
+<link rel="alternate" hreflang="x-default" href="https://silasmoreira.tech/o-cerebro-alugado/">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Silas Moreira">
+<meta name="theme-color" content="#0A1250">
+<meta property="og:type" content="book">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Silas Moreira">
+<meta property="og:title" content="Brain for Rent — free e-book">
+<meta property="og:description" content="How social media and AI are affecting our attention, memory and mental health.">
+<meta property="og:url" content="https://silasmoreira.tech/en/brain-for-rent/">
+<meta property="og:image" content="https://silasmoreira.tech/assets/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20261124d">
+<link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+<link rel="icon" href="/assets/favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-96.png?v=2" sizes="96x96" type="image/png">
+<link rel="icon" href="/assets/favicon-192.png?v=2" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Book","name":"Brain for Rent","alternativeHeadline":"How social media and artificial intelligence are affecting our attention, memory and mental health","author":{"@id":"https://silasmoreira.tech/#silas","@type":"Person","name":"Silas Moreira","jobTitle":"Product Manager"},"inLanguage":"en","bookFormat":"https://schema.org/EBook","numberOfPages":32,"isAccessibleForFree":true,"url":"https://silasmoreira.tech/en/brain-for-rent/","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://silasmoreira.tech/en/"},{"@type":"ListItem","position":2,"name":"Brain for Rent","item":"https://silasmoreira.tech/en/brain-for-rent/"}]}]}</script>
+<style>
+  /* E-book «O cérebro alugado»: personalidade da capa, resto do site calmo */
+  .eb-hero{position:relative;overflow:hidden;background:#1F2BFF;color:var(--white);padding:clamp(3rem,6vw,4.5rem) 0 clamp(3.5rem,6vw,5rem)}
+  .eb-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.14) 1.4px,transparent 1.6px) 0 0/22px 22px;-webkit-mask:radial-gradient(70% 80% at 85% 20%,#000,transparent 70%);mask:radial-gradient(70% 80% at 85% 20%,#000,transparent 70%);pointer-events:none}
+  .eb-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:center}
+  .eb-hero .crumbs{font-size:.9rem;color:rgba(255,255,255,.7);margin:0 0 1.2rem}
+  .eb-hero .crumbs a{color:inherit;text-underline-offset:3px}
+  .eb-tag{display:inline-block;background:var(--white);color:#C4005C;border:3px solid var(--pink);font-weight:800;letter-spacing:.06em;font-size:.9rem;padding:.25rem .7rem;transform:rotate(-3deg)}
+  .eb-hero h1{font-size:clamp(2.6rem,5.2vw,4.3rem);line-height:.95;letter-spacing:-.035em;margin:0 0 1rem}
+  .eb-hero h1 span{color:var(--neon)}
+  .eb-hero .lede{font-size:clamp(1.1rem,1.6vw,1.3rem);color:#fff;max-width:34ch;margin:0 0 2rem}
+  .eb-form{max-width:460px;box-shadow:12px 12px 0 var(--ink)}
+  .eb-form .check{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;line-height:1.45;color:var(--ink)}
+  .eb-form .field input{background:var(--white);border:2px solid #B9C0DE}
+  .eb-form .field input:hover{border-color:#8E97C4}
+  .eb-form .field input:focus{border-color:var(--cobalt);box-shadow:0 0 0 4px rgba(31,43,255,.15)}
+  .eb-form .field label{color:var(--ink)}
+  .eb-form .hint{color:#3A4275}
+  .eb-form .check input{width:20px;height:20px;margin-top:.1rem;flex:none;accent-color:var(--cobalt)}
+  .eb-form .btn{justify-self:stretch;justify-content:center}
+  .eb-done{display:none}
+  .eb-form.done .eb-fields{display:none} .eb-form.done .eb-done{display:grid;gap:.8rem}
+  .eb-done h2{font-size:1.8rem;margin:0} .eb-done p{margin:0;color:var(--ink-2)}
+
+  .eb-blob{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none}
+  .eb-blob.b1{width:420px;height:420px;background:var(--ink);opacity:.45;right:-120px;top:-140px}
+  .eb-blob.b2{width:300px;height:300px;background:var(--pink);opacity:.45;left:30%;bottom:-180px}
+  .eb-blob.b3{width:220px;height:220px;background:var(--neon);opacity:.18;left:-80px;top:40%}
+  .eb-deco{position:absolute;pointer-events:none}
+  .eb-strip{background:var(--neon);color:var(--ink);overflow:hidden;white-space:nowrap;font-weight:800;font-size:clamp(1.1rem,2vw,1.4rem);letter-spacing:.03em;padding:.9rem 0}
+  .eb-strip .run{display:inline-block;animation:eb-run 38s linear infinite}
+  .eb-strip span{padding:0 1.1rem} .eb-strip i{font-style:normal;color:#C4005C}
+  @keyframes eb-run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .eb-pinkbg{background:#FFE6F2}
+  .eb-greenbg{background:#E3FFF0}
+  .eb-pinksec{background:#D6006A;color:var(--white)}
+
+  /* mockup do livro */
+  .eb-book{justify-self:center;perspective:1400px;width:min(400px,88%);position:relative}
+  .eb-book::before{content:"";position:absolute;inset:-18% -22%;background:radial-gradient(closest-side,rgba(255,255,255,.28),rgba(255,255,255,.08) 55%,transparent 75%);filter:blur(8px);pointer-events:none}
+  .eb-book .b{container-type:inline-size;position:relative;aspect-ratio:794/1123;transform:rotateY(-18deg) rotateX(4deg);transform-style:preserve-3d;transition:transform .6s var(--ease)}
+  .eb-book:hover .b{transform:rotateY(-8deg) rotateX(2deg)}
+  .eb-book .face{position:absolute;inset:0;background:var(--ink);border-radius:3px 8px 8px 3px;padding:9% 9% 8%;display:flex;flex-direction:column;gap:.6rem;overflow:hidden;box-shadow:inset 6px 0 10px -4px rgba(0,0,0,.6),14px 14px 0 var(--neon),0 50px 70px -20px rgba(0,0,0,.8);border:2px solid rgba(255,255,255,.55)}
+  .eb-book .face::after{content:"";position:absolute;inset:0 auto 0 7%;width:2px;background:rgba(255,255,255,.12)}
+  .eb-book .pages{position:absolute;top:2%;bottom:2%;right:-14px;width:16px;background:repeating-linear-gradient(90deg,#fff 0 1px,#E4E7F2 1px 2px);transform:rotateY(90deg) translateZ(-8px);transform-origin:left;border-radius:0 3px 3px 0}
+  .eb-book .ct{font-weight:800;font-size:13cqw;line-height:.9;letter-spacing:-.04em;margin-top:8%}
+  .eb-book .ct span{color:var(--neon)}
+  .eb-book .cs{font-size:3.7cqw;line-height:1.35;color:rgba(255,255,255,.75)}
+  .eb-book .art{flex:1;display:flex;align-items:center;justify-content:center;position:relative}
+  .eb-book .art svg{width:78%}
+  .eb-book .art .eb-tag{position:absolute;top:4%;right:-2%;transform:rotate(9deg);font-size:3.4cqw}
+  .eb-book .au{font-weight:800;font-size:4.3cqw}
+
+  /* contrato */
+  .eb-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,4.5rem);align-items:center}
+  .eb-mark{background:linear-gradient(transparent 60%,var(--neon) 60%,var(--neon) 90%,transparent 90%)}
+  .eb-paper{background:#FBFAF6;border:1.5px solid #D9D3C3;border-radius:6px;padding:clamp(1.4rem,3vw,2rem);transform:rotate(-1deg);box-shadow:8px 8px 0 #ECE8DC}
+  .eb-paper .t{text-align:center;font-weight:800;letter-spacing:.06em;font-size:.95rem;border-bottom:1px solid #D9D3C3;padding-bottom:.7rem;margin-bottom:1rem}
+  .eb-paper p{margin:0 0 .9rem;line-height:1.55} .eb-paper p:last-child{margin:0}
+  .eb-paper b{color:#C4005C}
+
+  /* partes */
+  .eb-parts{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  .eb-parts li{border-radius:20px;padding:1.4rem 1.4rem;font-weight:800;font-size:1.2rem;line-height:1.2;display:flex;gap:.9rem;align-items:center;min-height:96px}
+  .eb-parts li:nth-child(3n+1){background:var(--neon);color:var(--ink)}
+  .eb-parts li:nth-child(3n+2){background:#D6006A;color:var(--white)}
+  .eb-parts li:nth-child(3n){background:var(--cobalt);color:var(--white)}
+  .eb-parts li span{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;font-weight:800}
+  .eb-parts li span{background:var(--white);color:var(--ink)}
+
+  /* autor */
+  .eb-author{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.5rem,4vw,2.5rem);align-items:center}
+  .eb-author img{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:50% 30%;box-shadow:0 0 0 5px var(--white),0 0 0 9px var(--neon)}
+  .eb-author p{color:var(--ink-2);font-size:1.1rem;margin:.6rem 0 0;max-width:60ch}
+  .eb-author .role{font-weight:700;color:var(--ink);margin-top:.2rem}
+  .eb-author .in{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.2rem;background:var(--ink);color:var(--white);font-weight:700;text-decoration:none;padding:.7rem 1.1rem;border-radius:999px}
+  .eb-author .in:hover{background:var(--cobalt)}
+
+  .eb-final{text-align:center}
+  .eb-final h2{font-size:clamp(2rem,4.4vw,3.2rem);max-width:20ch;margin:0 auto 1.6rem}
+  .eb-final h2 span{color:var(--ink)}
+
+  @media (max-width:860px){
+    .eb-grid,.eb-two{grid-template-columns:minmax(0,1fr)}
+    .eb-book{order:-1;width:min(240px,62%)}
+    .eb-parts{grid-template-columns:minmax(0,1fr)}
+    .eb-author{grid-template-columns:minmax(0,1fr)}
+    .eb-form{box-shadow:8px 8px 0 var(--ink)}
+    .eb-deco{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){.eb-book .b{transition:none}.eb-strip .run{animation:none}}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/en/" aria-label="Silas Moreira, home page"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#0A1250"/><circle cx="50" cy="52" r="30" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="150 39" transform="rotate(-8 50 52)"/><circle cx="50" cy="52" r="11" fill="#2BFF88"/><circle cx="71.5" cy="30.5" r="9" fill="#FF2E93"/></svg>Silas Moreira</a>
+    <nav class="nav" aria-label="Main"><a href="/en/">Home</a><a href="/en/sobre/#trajetoria">My journey</a><a href="/en/palestras/">On stage</a><a href="/en/partilhas/">Shares</a><a href="/en/recursos/">Lab</a><a class="nav-cta" href="/en/contacto/">Contact</a></nav>
+    <div class="lang-dd"><button type="button" class="lang-btn" aria-expanded="false" aria-label="Change language"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span class="lang-cur">EN</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="langs" aria-label="Language"><a class="lang" href="/o-cerebro-alugado/" hreflang="pt" lang="pt-BR"><b>PT</b>Português</a><a class="lang on" aria-current="true" lang="en"><b>EN</b>English</a></div></div>
+    <button class="menu-btn" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+
+  <section class="eb-hero" aria-labelledby="h1">
+    <span class="eb-blob b1" aria-hidden="true"></span><span class="eb-blob b2" aria-hidden="true"></span><span class="eb-blob b3" aria-hidden="true"></span>
+    <svg class="eb-deco" aria-hidden="true" style="left:44%;top:12%;opacity:.55" width="20" height="20" stroke="#2BFF88" stroke-width="2.5" stroke-linecap="round"><path d="M10 2v16M2 10h16"/></svg>
+    <svg class="eb-deco" aria-hidden="true" style="right:6%;bottom:14%;opacity:.5" width="20" height="20" stroke="#FF2E93" stroke-width="2.5" stroke-linecap="round"><path d="M10 2v16M2 10h16"/></svg>
+    <svg class="eb-deco" aria-hidden="true" style="left:47%;bottom:10%;opacity:.45" width="150" height="30" fill="none" stroke="#FF2E93" stroke-width="3" stroke-linecap="round"><path d="M3 15 q15 -14 30 0 t30 0 t30 0 t30 0"/></svg>
+    <svg class="eb-deco" aria-hidden="true" style="right:30%;top:8%;opacity:.25" width="230" height="230" fill="none"><circle cx="115" cy="115" r="111" stroke="#2BFF88" stroke-width="2" stroke-dasharray="6 10"/></svg>
+    <div class="wrap eb-grid">
+      <div>
+        <p class="crumbs"><a href="/en/">Home</a> / E-book</p>
+        <h1 id="h1">Brain <span>for Rent</span></h1>
+        <p class="lede">How social media and AI are affecting our attention, memory and mental health. Free, as a PDF.</p>
+
+        <form class="form eb-form" id="baixar" novalidate>
+          <div class="eb-fields" style="display:grid;gap:.95rem">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="field"><label for="nome">Name</label><input id="nome" name="nome" autocomplete="given-name" required></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <label class="check"><input type="checkbox" name="novidades" value="sim"><span>Send me the occasional update. Optional, and you can cancel any time.</span></label>
+            <button class="btn" type="submit">Get the free e-book</button>
+            <p class="hint" id="eb-msg" role="status">We'll email you the link too. <button type="button" data-open-privacy>How I use your data</button>.</p>
+          </div>
+          <div class="eb-done" aria-live="polite">
+            <h2>Lease ended.</h2>
+            <p id="eb-done-msg">Your e-book is ready. We've also emailed you the link.</p>
+            <a class="btn neon" href="/en/brain-for-rent/brain-for-rent.pdf" download>Download the PDF</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="eb-book" aria-label="Cover of the e-book Brain for Rent, by Silas Moreira">
+        <div class="b">
+          <div class="pages"></div>
+          <div class="face">
+            <div class="ct">Brain<br><span>for Rent</span></div>
+            <div class="cs">How social media and artificial intelligence are affecting our attention, memory and mental health.</div>
+            <div class="art"><svg aria-hidden="true" viewBox="0 0 400 400" fill="none">
+<path d="M200 90 c-40 -30 -110 -10 -112 50 c-40 14 -44 80 -6 98 c-8 48 44 82 86 60 c14 18 32 18 32 18 z" fill="#FF2E93"/>
+<path d="M200 90 c40 -30 110 -10 112 50 c40 14 44 80 6 98 c8 48 -44 82 -86 60 c-14 18 -32 18 -32 18 z" fill="#FF6FAE"/>
+<path d="M200 96 v218" stroke="#0A1250" stroke-width="5"/>
+<path d="M140 150 c20 10 26 30 14 46 M262 150 c-20 10 -26 30 -14 46 M128 236 c18 -4 34 6 38 22 M272 236 c-18 -4 -34 6 -38 22" stroke="#0A1250" stroke-width="5" stroke-linecap="round"/>
+</svg><span class="eb-tag">FOR RENT</span></div>
+            <div class="au">Silas Moreira</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="eb-strip" aria-hidden="true"><div class="run"><span>FOR RENT: ONE BRAIN</span><i>●</i><span>GOOD CONDITION</span><i>●</i><span>BARELY USED</span><i>●</i><span>AVAILABLE 24/7</span><i>●</i><span>ENQUIRE IN THE FEED</span><i>●</i><span>FOR RENT: ONE BRAIN</span><i>●</i><span>GOOD CONDITION</span><i>●</i><span>BARELY USED</span><i>●</i><span>AVAILABLE 24/7</span><i>●</i><span>ENQUIRE IN THE FEED</span><i>●</i></div></div>
+
+  <section class="sec eb-pinkbg" aria-labelledby="t-contrato">
+    <div class="wrap eb-two">
+      <div>
+        <h2 id="t-contrato" style="font-size:clamp(2rem,4.4vw,3.2rem);line-height:1;letter-spacing:-.03em;margin:0">You signed a contract <span class="eb-mark">without reading it.</span></h2>
+        <p style="font-size:1.15rem;color:var(--ink-2);margin:1.2rem 0 0;max-width:42ch">Every time you open an app without knowing why, you rent out a piece of your attention. This book shows what you pay for it and how to own the place again.</p>
+      </div>
+      <div class="eb-paper" aria-label="Excerpt from the brain rental agreement">
+        <div class="t">BRAIN RENTAL AGREEMENT</div>
+        <p><b>Clause 3.</b> The Tenant may remodel the premises without notice: reading habits, concentration and hours of sleep.</p>
+        <p><b>Clause 6.</b> Termination is possible at any time, at the Owner's initiative. The Tenant will do everything to stop it happening.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="t-dentro">
+    <div class="wrap">
+      <h2 id="t-dentro" style="font-size:clamp(2rem,4.4vw,3.2rem);line-height:1;letter-spacing:-.03em;margin:0">What's inside</h2>
+      <p style="color:var(--ink-2);font-size:1.1rem;margin:.8rem 0 0">Six parts, three-minute chapters and more than 30 references.</p>
+      <ol class="eb-parts">
+        <li><span>1</span>The two AIs in your life</li>
+        <li><span>2</span>Your brain on scroll</li>
+        <li><span>3</span>Thinking less?</li>
+        <li><span>4</span>A society without presence</li>
+        <li><span>5</span>When too much becomes a problem</li>
+        <li><span>6</span>Ending the lease</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec eb-greenbg" aria-labelledby="t-autor">
+    <div class="wrap eb-author">
+      <picture><source srcset="/assets/silas-moreira-480.webp" type="image/webp"><img src="/assets/silas-moreira-480.jpg" alt="Silas Moreira" width="150" height="150" loading="lazy"></picture>
+      <div>
+        <h2 id="t-autor" style="font-size:clamp(1.8rem,3.4vw,2.4rem);margin:0">Silas Moreira</h2>
+        <p class="role">Product Manager</p>
+        <p>I work in digital product in Brazil and Portugal: payments, super apps, marketplaces, retail media and internal platforms, at companies like Ame Digital, Magalu and Sonae. I've spent many hours in the meetings where people decide the colour of a button, the wording of a notification and the time it lands.</p>
+        <p>This book grew out of that experience. It isn't against technology: it's an invitation to understand the design choices competing for our attention and to use screens with more intention. I also talk about this on stage and on LinkedIn.</p>
+        <a class="in" href="https://www.linkedin.com/in/silasmoreira/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.8-1.7-2.8-1.71 0-1.97 1.33-1.97 2.7V21h-4z"/></svg>Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec eb-pinksec eb-final" aria-labelledby="t-final">
+    <div class="wrap">
+      <h2 id="t-final">It's your brain. <span>Don't rent it out without reading the contract.</span></h2>
+      <a class="btn neon" href="#baixar">Get the free e-book</a>
+    </div>
+  </section>
+</main>
+
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot-brand"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#0A1250"/><circle cx="50" cy="52" r="30" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="150 39" transform="rotate(-8 50 52)"/><circle cx="50" cy="52" r="11" fill="#2BFF88"/><circle cx="71.5" cy="30.5" r="9" fill="#FF2E93"/></svg><span>© <span data-year>2026</span> Silas Moreira, Porto</span></span>
+    <nav aria-label="Footer">
+      <a href="/en/palestras/">Talks</a><a href="/en/sobre/">About</a><a href="/en/partilhas/">Shares</a><a href="/en/recursos/">Lab</a><a href="/en/contacto/">Contact</a>
+      <a href="https://www.linkedin.com/in/silasmoreira/" rel="noopener" target="_blank">LinkedIn</a>
+      <button type="button" data-open-privacy>Privacy and data</button>
+      <button type="button" data-open-consent>Analytics preferences</button>
+    </nav>
+  </div>
+</footer>
+
+<dialog class="privacy" aria-labelledby="t-priv">
+  <div class="privacy-in">
+    <h2 id="t-priv">Privacy and data</h2>
+    <p>Data controller: Silas Moreira. For any privacy question, use the contact form.</p>
+    <h3>Contact messages</h3>
+    <p>The form sends your name, email, subject and message through <a href="https://formsubmit.co/privacy.pdf" rel="noopener" target="_blank">FormSubmit</a> to my email (<a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google</a>). I use this data only to reply, based on legitimate interest or pre-contractual steps, and keep it only as long as needed. FormSubmit's documentation states 30 days of retention. Please don't include sensitive data.</p>
+    <h3>E-book “Brain for Rent”</h3>
+    <p>To send the e-book, the form collects your name, email, the date and time of the request and your choice about receiving updates. The data is stored at <a href="https://www.brevo.com/legal/privacypolicy/" rel="noopener" target="_blank">Brevo</a>, an email service with data in the European Union, which also sends the email with the link. I use your email to send the book and, only if you tick the box, for occasional updates, which you can cancel at any time by replying to any message or through the contact form. I keep this data while your consent stands or until you ask me to delete it.</p>
+    <h3>Visit analytics</h3>
+    <p>Only with your consent, <a href="https://docs.umami.is/docs/cloud/faq" rel="noopener" target="_blank">Umami Cloud</a> records pages visited, referrer, browser, device and clicks. The IP is used to estimate location. Data stays in the European Union for up to six months and is never sold or used for advertising.</p>
+    <h3>Browser preferences and security</h3>
+    <p>The site stores your language and analytics choice for 180 days. <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener" target="_blank">Cloudflare</a> uses the security cookie __cf_bm to detect automated traffic; it expires after 30 minutes of inactivity. Security and support services may operate outside the EU.</p>
+    <h3>Your rights</h3>
+    <p>Access, rectification, erasure, restriction, portability and objection, where applicable. You can withdraw analytics consent under "Analytics preferences" in the footer, and lodge a complaint with the <a href="https://www.cnpd.pt/cidadaos/participacoes/" rel="noopener" target="_blank">CNPD</a>.</p>
+    <form method="dialog"><button class="btn">Close</button></form>
+  </div>
+</dialog>
+
+<div class="consent" role="region" aria-label="Visit analytics">
+  <p>May I measure visits with Umami, with no advertising and data kept in the EU? It helps me understand what is useful.</p>
+  <div class="row"><button class="btn" data-consent="yes">Accept</button><button class="btn line" data-consent="no">Decline</button><button class="btn line" data-open-privacy>Learn more</button></div>
+</div>
+
+<script src="/assets/site.js?v=20261124d" defer></script>
+<script>
+{
+  const ENDPOINT = "https://3a51de18.sibforms.com/serve/MUIFALar0yZsvQ4DxSWSekOnsRo0Sf6Ec1nWxTDQILCpGNJmg7EA-r92tdM0qdqrqf5__-CwnmR5Y7yfJ8Nj2cbAKLyQJrOGLsRJQ3KLhTHMM-nRGE5blDsYz5CkkGZKlnZ_b2cb05NEANLG7qOfS4-GmsAmScqFZ_Yt6y22YjInhc5bH5D5cE5VRVwlri773bp6E8fI0bnfsDCasw==";
+  const f = document.getElementById("baixar"), msg = document.getElementById("eb-msg");
+  f.addEventListener("submit", async (ev) => {
+    ev.preventDefault();
+    if (!f.checkValidity()) { msg.textContent = "Please enter your name and a valid email."; f.reportValidity(); return; }
+    if (f._honey.value) return;
+    const btn = f.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = "Sending…";
+    const novidades = f.novidades.checked;
+    const data = new FormData();
+    data.append("EMAIL", f.email.value.trim());
+    data.append("NOME", f.nome.value.trim());
+    if (novidades) data.append("OPT_IN", "1");
+    data.append("email_address_check", "");
+    data.append("locale", "en");
+    data.append("html_type", "simple");
+    try {
+      await fetch(ENDPOINT, { method: "POST", mode: "no-cors", body: data });
+    } catch (e) {
+      document.getElementById("eb-done-msg").textContent = "Your e-book is ready. We couldn't register your email right now, but you can download it here.";
+    }
+    f.classList.add("done");
+    if (window.umami) umami.track("ebook-download", { updates: novidades ? "yes" : "no", lang: "en" });
+  });
+}
+</script>
+</body>
+</html>
