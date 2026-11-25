@@ -241,7 +241,7 @@
     <h3>Mensagens de contacto</h3>
     <p>O formulário envia nome, e-mail, assunto e mensagem através do <a href="https://formsubmit.co/privacy.pdf" rel="noopener" target="_blank">FormSubmit</a> para o meu e-mail (<a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google</a>). Uso estes dados apenas para responder, com base no interesse legítimo ou em diligências pré-contratuais, e guardo-os enquanto forem necessários. A documentação do FormSubmit indica 30 dias de conservação. Não incluas dados sensíveis.</p>
     <h3>E-book «O cérebro alugado»</h3>
-    <p>Para enviar o e-book, o formulário recolhe nome, e-mail, a data e hora do pedido e a tua escolha sobre receber novidades. Os dados seguem pelo <a href="https://formsubmit.co/privacy.pdf" rel="noopener" target="_blank">FormSubmit</a> para o meu e-mail (<a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google</a>). Uso o e-mail para enviar o livro e, só se marcares a opção, para novidades ocasionais, que podes cancelar a qualquer momento respondendo a qualquer mensagem ou pelo formulário de contacto. Guardo estes dados enquanto mantiveres o consentimento ou até pedires o apagamento.</p>
+    <p>Para enviar o e-book, o formulário recolhe nome, e-mail, a data e hora do pedido e a tua escolha sobre receber novidades. Os dados ficam guardados na <a href="https://www.brevo.com/legal/privacypolicy/" rel="noopener" target="_blank">Brevo</a>, serviço de e-mail com dados na União Europeia, que também envia o e-mail com o link. Uso o e-mail para enviar o livro e, só se marcares a opção, para novidades ocasionais, que podes cancelar a qualquer momento respondendo a qualquer mensagem ou pelo formulário de contacto. Guardo estes dados enquanto mantiveres o consentimento ou até pedires o apagamento.</p>
     <h3>Estatísticas de visita</h3>
     <p>Só com o teu consentimento, o <a href="https://docs.umami.is/docs/cloud/faq" rel="noopener" target="_blank">Umami Cloud</a> regista páginas visitadas, origem, navegador, dispositivo e cliques. O IP serve para estimar a localização. Os dados ficam na União Europeia até seis meses e não são vendidos nem usados para publicidade.</p>
     <h3>Preferências do navegador e segurança</h3>
@@ -260,9 +260,7 @@
 <script src="/assets/site.js?v=20261124d" defer></script>
 <script>
 {
-  const ENDPOINT = "https://formsubmit.co/ajax/abd7c201b70eff5f47bd1645a8456f6d";
-  const PDF_URL = "https://silasmoreira.tech/o-cerebro-alugado/o-cerebro-alugado.pdf";
-  const CONSENT_TXT = "Pediu o e-book «O cérebro alugado» em silasmoreira.tech/o-cerebro-alugado/. Novidades por e-mail: ";
+  const ENDPOINT = "https://3a51de18.sibforms.com/serve/MUIFAJVpHYu-FPSBKROx7dAnimroqqXOgiCXpvqpwUwWN4wBCiNPJPOjd_-PaOlPyt1380QaQS3iVue0x-ivXqaC0VXri8R1TalK4KDzdG2CmjtLsAQRqrsajVEPK-WYwypPlwu8tgaNaU0ddtNG604RXXYxG3RguiSBGGyghxQwjUMLgZ_pgD_5de2-fmlXqWLwVXJMh2aJhH7wSA==";
   const f = document.getElementById("baixar"), msg = document.getElementById("eb-msg");
   f.addEventListener("submit", async (ev) => {
     ev.preventDefault();
@@ -270,21 +268,21 @@
     if (f._honey.value) return;
     const btn = f.querySelector('button[type="submit"]');
     btn.disabled = true; btn.textContent = "Enviando…";
-    const novidades = f.novidades.checked ? "sim" : "não";
-    const data = {
-      nome: f.nome.value.trim(), email: f.email.value.trim(), novidades,
-      registo: CONSENT_TXT + novidades + ".", data_hora: new Date().toISOString(),
-      _subject: "E-book O cérebro alugado: novo download", _template: "table",
-      _autoresponse: "Olá! Aqui está o seu e-book O cérebro alugado: " + PDF_URL + " . Boa leitura. Silas Moreira"
-    };
+    const novidades = f.novidades.checked;
+    const data = new FormData();
+    data.append("EMAIL", f.email.value.trim());
+    data.append("NOME", f.nome.value.trim());
+    if (novidades) data.append("OPT_IN", "1");
+    data.append("email_address_check", "");
+    data.append("locale", "pt");
+    data.append("html_type", "simple");
     try {
-      const r = await fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(data) });
-      if (!r.ok) throw new Error(String(r.status));
+      await fetch(ENDPOINT, { method: "POST", mode: "no-cors", body: data });
     } catch (e) {
-      document.getElementById("eb-done-msg").textContent = "Seu e-book está pronto. Não conseguimos enviar o e-mail agora, mas você pode baixar aqui.";
+      document.getElementById("eb-done-msg").textContent = "Seu e-book está pronto. Não conseguimos registrar seu e-mail agora, mas você pode baixar aqui.";
     }
     f.classList.add("done");
-    if (window.umami) umami.track("ebook-download", { novidades });
+    if (window.umami) umami.track("ebook-download", { novidades: novidades ? "sim" : "não" });
   });
 }
 </script>
