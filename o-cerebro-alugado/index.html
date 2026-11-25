@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-umami="1f7479ff-8ca7-496d-86fa-cc7b190c873f">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O cérebro alugado — e-book grátis sobre redes sociais, IA e saúde mental</title>
+<meta name="description" content="E-book gratuito: como as redes sociais e a inteligência artificial afetam sua atenção, memória e saúde mental. Psicologia e neurociência em linguagem simples, com mais de 30 referências.">
+<link rel="canonical" href="https://silasmoreira.tech/o-cerebro-alugado/">
+<meta name="robots" content="noindex, follow">
+<meta name="author" content="Silas Moreira">
+<meta name="theme-color" content="#0A1250">
+<meta property="og:type" content="book">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Silas Moreira">
+<meta property="og:title" content="O cérebro alugado — e-book grátis">
+<meta property="og:description" content="Como as redes sociais e a IA estão afetando nossa atenção, memória e saúde mental.">
+<meta property="og:url" content="https://silasmoreira.tech/o-cerebro-alugado/">
+<meta property="og:image" content="https://silasmoreira.tech/assets/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20261124d">
+<link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+<link rel="icon" href="/assets/favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-96.png?v=2" sizes="96x96" type="image/png">
+<link rel="icon" href="/assets/favicon-192.png?v=2" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Book","name":"O cérebro alugado","alternativeHeadline":"Como as redes sociais e a inteligência artificial estão afetando nossa atenção, memória e saúde mental","author":{"@id":"https://silasmoreira.tech/#silas","@type":"Person","name":"Silas Moreira","jobTitle":"Product Manager"},"inLanguage":"pt-BR","bookFormat":"https://schema.org/EBook","numberOfPages":32,"isAccessibleForFree":true,"url":"https://silasmoreira.tech/o-cerebro-alugado/","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://silasmoreira.tech/"},{"@type":"ListItem","position":2,"name":"O cérebro alugado","item":"https://silasmoreira.tech/o-cerebro-alugado/"}]}]}</script>
+<style>
+  /* E-book «O cérebro alugado»: personalidade da capa, resto do site calmo */
+  .eb-hero{position:relative;overflow:hidden;background:var(--ink);color:var(--white);padding:clamp(3rem,7vw,5.5rem) 0 clamp(3.5rem,7vw,6rem)}
+  .eb-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.14) 1.4px,transparent 1.6px) 0 0/22px 22px;-webkit-mask:radial-gradient(70% 80% at 85% 20%,#000,transparent 70%);mask:radial-gradient(70% 80% at 85% 20%,#000,transparent 70%);pointer-events:none}
+  .eb-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(2rem,6vw,5rem);align-items:center}
+  .eb-hero .crumbs{font-size:.9rem;color:rgba(255,255,255,.7);margin:0 0 1.2rem}
+  .eb-hero .crumbs a{color:inherit;text-underline-offset:3px}
+  .eb-tag{display:inline-block;background:var(--white);color:#C4005C;border:3px solid var(--pink);font-weight:800;letter-spacing:.06em;font-size:.9rem;padding:.25rem .7rem;transform:rotate(-3deg)}
+  .eb-hero h1{font-size:clamp(2.8rem,6.4vw,5.2rem);line-height:.95;letter-spacing:-.035em;margin:1rem 0 1rem}
+  .eb-hero h1 span{color:var(--neon)}
+  .eb-hero .lede{font-size:clamp(1.1rem,1.6vw,1.3rem);color:rgba(255,255,255,.82);max-width:34ch;margin:0 0 2rem}
+  .eb-form{max-width:470px;box-shadow:12px 12px 0 var(--pink)}
+  .eb-form .check{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;line-height:1.45;color:var(--ink-2)}
+  .eb-form .check input{width:20px;height:20px;margin-top:.1rem;flex:none;accent-color:var(--cobalt)}
+  .eb-form .btn{justify-self:stretch;justify-content:center}
+  .eb-done{display:none}
+  .eb-form.done .eb-fields{display:none} .eb-form.done .eb-done{display:grid;gap:.8rem}
+  .eb-done h2{font-size:1.8rem;margin:0} .eb-done p{margin:0;color:var(--ink-2)}
+
+  /* mockup do livro */
+  .eb-book{justify-self:center;perspective:1400px;width:min(330px,80%)}
+  .eb-book .b{position:relative;aspect-ratio:794/1123;transform:rotateY(-18deg) rotateX(4deg);transform-style:preserve-3d;transition:transform .6s var(--ease)}
+  .eb-book:hover .b{transform:rotateY(-8deg) rotateX(2deg)}
+  .eb-book .face{position:absolute;inset:0;background:var(--ink);border-radius:3px 8px 8px 3px;padding:9% 9% 8%;display:flex;flex-direction:column;gap:.6rem;overflow:hidden;box-shadow:inset 6px 0 10px -4px rgba(0,0,0,.6),0 40px 60px -25px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.12)}
+  .eb-book .face::after{content:"";position:absolute;inset:0 auto 0 7%;width:2px;background:rgba(255,255,255,.12)}
+  .eb-book .pages{position:absolute;top:2%;bottom:2%;right:-14px;width:16px;background:repeating-linear-gradient(90deg,#fff 0 1px,#E4E7F2 1px 2px);transform:rotateY(90deg) translateZ(-8px);transform-origin:left;border-radius:0 3px 3px 0}
+  .eb-book .ct{font-weight:800;font-size:clamp(2rem,4.4vw,2.9rem);line-height:.9;letter-spacing:-.04em;margin-top:8%}
+  .eb-book .ct span{color:var(--neon)}
+  .eb-book .cs{font-size:.78rem;line-height:1.35;color:rgba(255,255,255,.75)}
+  .eb-book .art{flex:1;display:flex;align-items:center;justify-content:center;position:relative}
+  .eb-book .art svg{width:78%}
+  .eb-book .art .eb-tag{position:absolute;top:4%;right:-2%;transform:rotate(9deg);font-size:.8rem}
+  .eb-book .au{font-weight:800;font-size:.95rem}
+
+  /* contrato */
+  .eb-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,4.5rem);align-items:center}
+  .eb-mark{background:linear-gradient(transparent 60%,var(--neon) 60%,var(--neon) 90%,transparent 90%)}
+  .eb-paper{background:#FBFAF6;border:1.5px solid #D9D3C3;border-radius:6px;padding:clamp(1.4rem,3vw,2rem);transform:rotate(-1deg);box-shadow:8px 8px 0 #ECE8DC}
+  .eb-paper .t{text-align:center;font-weight:800;letter-spacing:.06em;font-size:.95rem;border-bottom:1px solid #D9D3C3;padding-bottom:.7rem;margin-bottom:1rem}
+  .eb-paper p{margin:0 0 .9rem;line-height:1.55} .eb-paper p:last-child{margin:0}
+  .eb-paper b{color:#C4005C}
+
+  /* partes */
+  .eb-parts{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  .eb-parts li{background:var(--white);border-radius:20px;padding:1.3rem 1.4rem;font-weight:700;font-size:1.12rem;line-height:1.25;display:flex;gap:.9rem;align-items:center}
+  .eb-parts li span{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;font-weight:800}
+  .eb-parts li:nth-child(3n+1) span{background:var(--neon);color:var(--ink)}
+  .eb-parts li:nth-child(3n+2) span{background:var(--pink);color:var(--white)}
+  .eb-parts li:nth-child(3n) span{background:var(--cobalt);color:var(--white)}
+
+  /* autor */
+  .eb-author{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.5rem,4vw,2.5rem);align-items:center}
+  .eb-author img{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:50% 30%;box-shadow:0 0 0 5px var(--white),0 0 0 9px var(--neon)}
+  .eb-author p{color:var(--ink-2);font-size:1.1rem;margin:.6rem 0 0;max-width:52ch}
+
+  .eb-final{text-align:center}
+  .eb-final h2{font-size:clamp(2rem,4.4vw,3.2rem);max-width:20ch;margin:0 auto 1.6rem}
+  .eb-final h2 span{color:var(--neon)}
+
+  @media (max-width:860px){
+    .eb-grid,.eb-two{grid-template-columns:minmax(0,1fr)}
+    .eb-book{order:-1;width:min(240px,62%)}
+    .eb-parts{grid-template-columns:minmax(0,1fr)}
+    .eb-author{grid-template-columns:minmax(0,1fr)}
+    .eb-form{box-shadow:8px 8px 0 var(--pink)}
+  }
+  @media (prefers-reduced-motion:reduce){.eb-book .b{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar para o conteúdo</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Silas Moreira, página inicial"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#0A1250"/><circle cx="50" cy="52" r="30" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="150 39" transform="rotate(-8 50 52)"/><circle cx="50" cy="52" r="11" fill="#2BFF88"/><circle cx="71.5" cy="30.5" r="9" fill="#FF2E93"/></svg>Silas Moreira</a>
+    <nav class="nav" aria-label="Principal"><a href="/">Início</a><a href="/sobre/#trajetoria">O meu percurso</a><a href="/palestras/">Em palco</a><a href="/partilhas/">Partilhas</a><a href="/recursos/">Laboratório</a><a class="nav-cta" href="/contacto/">Contacto</a></nav>
+        <button class="menu-btn" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+
+  <section class="eb-hero" aria-labelledby="h1">
+    <div class="wrap eb-grid">
+      <div>
+        <p class="crumbs"><a href="/">Início</a> / E-book</p>
+        <span class="eb-tag">ALUGA-SE: UM CÉREBRO</span>
+        <h1 id="h1">O cérebro <span>alugado</span></h1>
+        <p class="lede">Como as redes sociais e a IA estão afetando nossa atenção, memória e saúde mental. Grátis, em PDF.</p>
+
+        <form class="form eb-form" id="baixar" novalidate>
+          <div class="eb-fields" style="display:grid;gap:.95rem">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" autocomplete="given-name" required></div>
+            <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <label class="check"><input type="checkbox" name="novidades" value="sim"><span>Quero receber novidades de vez em quando. Opcional, dá para cancelar quando quiser.</span></label>
+            <button class="btn" type="submit">Baixar o e-book grátis</button>
+            <p class="hint" id="eb-msg" role="status">Enviamos o link para o seu e-mail. <button type="button" data-open-privacy>Como uso os seus dados</button>.</p>
+          </div>
+          <div class="eb-done" aria-live="polite">
+            <h2>Contrato rescindido.</h2>
+            <p id="eb-done-msg">Seu e-book está pronto. Também mandamos o link para o seu e-mail.</p>
+            <a class="btn neon" href="/o-cerebro-alugado/o-cerebro-alugado.pdf" download>Baixar o PDF</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="eb-book" aria-label="Capa do e-book O cérebro alugado, de Silas Moreira">
+        <div class="b">
+          <div class="pages"></div>
+          <div class="face">
+            <div class="ct">O cérebro<br><span>alugado</span></div>
+            <div class="cs">Como as redes sociais e a inteligência artificial estão afetando nossa atenção, memória e saúde mental.</div>
+            <div class="art"><svg aria-hidden="true" viewBox="0 0 400 400" fill="none">
+<path d="M200 90 c-40 -30 -110 -10 -112 50 c-40 14 -44 80 -6 98 c-8 48 44 82 86 60 c14 18 32 18 32 18 z" fill="#FF2E93"/>
+<path d="M200 90 c40 -30 110 -10 112 50 c40 14 44 80 6 98 c8 48 -44 82 -86 60 c-14 18 -32 18 -32 18 z" fill="#FF6FAE"/>
+<path d="M200 96 v218" stroke="#0A1250" stroke-width="5"/>
+<path d="M140 150 c20 10 26 30 14 46 M262 150 c-20 10 -26 30 -14 46 M128 236 c18 -4 34 6 38 22 M272 236 c-18 -4 -34 6 -38 22" stroke="#0A1250" stroke-width="5" stroke-linecap="round"/>
+</svg><span class="eb-tag">ALUGA-SE</span></div>
+            <div class="au">Silas Moreira</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="t-contrato">
+    <div class="wrap eb-two">
+      <div>
+        <h2 id="t-contrato" style="font-size:clamp(2rem,4.4vw,3.2rem);line-height:1;letter-spacing:-.03em;margin:0">Você assinou um contrato <span class="eb-mark">sem ler.</span></h2>
+        <p style="font-size:1.15rem;color:var(--ink-2);margin:1.2rem 0 0;max-width:42ch">Toda vez que abre um app sem saber por quê, você aluga um pedaço da sua atenção. Este livro mostra o que você paga por isso e como voltar a ser dono da casa.</p>
+      </div>
+      <div class="eb-paper" aria-label="Trecho do contrato de locação de cérebro">
+        <div class="t">CONTRATO DE LOCAÇÃO DE CÉREBRO</div>
+        <p><b>Cláusula 3ª.</b> O Inquilino pode reformar o espaço sem aviso: hábitos de leitura, concentração e horas de sono.</p>
+        <p><b>Cláusula 6ª.</b> A rescisão é possível a qualquer momento, por iniciativa do Proprietário. O Inquilino fará de tudo para que isso não aconteça.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec paper" aria-labelledby="t-dentro">
+    <div class="wrap">
+      <h2 id="t-dentro" style="font-size:clamp(2rem,4.4vw,3.2rem);line-height:1;letter-spacing:-.03em;margin:0">O que tem dentro</h2>
+      <p style="color:var(--ink-2);font-size:1.1rem;margin:.8rem 0 0">Seis partes, capítulos de três minutos e mais de 30 referências.</p>
+      <ol class="eb-parts">
+        <li><span>1</span>As duas IAs da sua vida</li>
+        <li><span>2</span>O cérebro no scroll</li>
+        <li><span>3</span>Pensar menos?</li>
+        <li><span>4</span>Uma sociedade sem presença</li>
+        <li><span>5</span>Quando o excesso vira problema</li>
+        <li><span>6</span>Rescindir o contrato</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="t-autor">
+    <div class="wrap eb-author">
+      <picture><source srcset="/assets/silas-moreira-480.webp" type="image/webp"><img src="/assets/silas-moreira-480.jpg" alt="Silas Moreira" width="150" height="150" loading="lazy"></picture>
+      <div>
+        <h2 id="t-autor" style="font-size:clamp(1.8rem,3.4vw,2.4rem);margin:0">Silas Moreira</h2>
+        <p>Product Manager. Passou anos nas reuniões em que se decide a cor de um botão e o horário de uma notificação, e resolveu contar o que viu.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec ink eb-final" aria-labelledby="t-final">
+    <div class="wrap">
+      <h2 id="t-final">O cérebro é seu. <span>Não alugue sem ler o contrato.</span></h2>
+      <a class="btn neon" href="#baixar">Baixar o e-book grátis</a>
+    </div>
+  </section>
+</main>
+
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot-brand"><svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#0A1250"/><circle cx="50" cy="52" r="30" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-dasharray="150 39" transform="rotate(-8 50 52)"/><circle cx="50" cy="52" r="11" fill="#2BFF88"/><circle cx="71.5" cy="30.5" r="9" fill="#FF2E93"/></svg><span>© <span data-year>2026</span> Silas Moreira, Porto</span></span>
+    <nav aria-label="Rodapé">
+      <a href="/palestras/">Palestras</a><a href="/sobre/">Sobre</a><a href="/partilhas/">Partilhas</a><a href="/recursos/">Laboratório</a><a href="/contacto/">Contacto</a>
+      <a href="https://www.linkedin.com/in/silasmoreira/" rel="noopener" target="_blank">LinkedIn</a>
+      <button type="button" data-open-privacy>Privacidade e dados</button>
+      <button type="button" data-open-consent>Preferências de estatísticas</button>
+    </nav>
+  </div>
+</footer>
+
+<dialog class="privacy" aria-labelledby="t-priv">
+  <div class="privacy-in">
+    <h2 id="t-priv">Privacidade e dados</h2>
+    <p>Responsável pelo tratamento: Silas Moreira. Para qualquer questão de privacidade, usa o formulário de contacto.</p>
+    <h3>Mensagens de contacto</h3>
+    <p>O formulário envia nome, e-mail, assunto e mensagem através do <a href="https://formsubmit.co/privacy.pdf" rel="noopener" target="_blank">FormSubmit</a> para o meu e-mail (<a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google</a>). Uso estes dados apenas para responder, com base no interesse legítimo ou em diligências pré-contratuais, e guardo-os enquanto forem necessários. A documentação do FormSubmit indica 30 dias de conservação. Não incluas dados sensíveis.</p>
+    <h3>E-book «O cérebro alugado»</h3>
+    <p>Para enviar o e-book, o formulário recolhe nome, e-mail, a data e hora do pedido e a tua escolha sobre receber novidades. Os dados seguem pelo <a href="https://formsubmit.co/privacy.pdf" rel="noopener" target="_blank">FormSubmit</a> para o meu e-mail (<a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google</a>). Uso o e-mail para enviar o livro e, só se marcares a opção, para novidades ocasionais, que podes cancelar a qualquer momento respondendo a qualquer mensagem ou pelo formulário de contacto. Guardo estes dados enquanto mantiveres o consentimento ou até pedires o apagamento.</p>
+    <h3>Estatísticas de visita</h3>
+    <p>Só com o teu consentimento, o <a href="https://docs.umami.is/docs/cloud/faq" rel="noopener" target="_blank">Umami Cloud</a> regista páginas visitadas, origem, navegador, dispositivo e cliques. O IP serve para estimar a localização. Os dados ficam na União Europeia até seis meses e não são vendidos nem usados para publicidade.</p>
+    <h3>Preferências do navegador e segurança</h3>
+    <p>O site guarda o idioma e a tua escolha sobre estatísticas durante 180 dias. A <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener" target="_blank">Cloudflare</a> usa o cookie de segurança __cf_bm para detetar tráfego automatizado; expira após 30 minutos de inatividade. Serviços de segurança e suporte podem operar fora da UE.</p>
+    <h3>Os teus direitos</h3>
+    <p>Acesso, retificação, apagamento, limitação, portabilidade e oposição, quando aplicáveis. Podes retirar o consentimento para estatísticas em "Preferências de estatísticas", no rodapé, e apresentar reclamação à <a href="https://www.cnpd.pt/cidadaos/participacoes/" rel="noopener" target="_blank">CNPD</a>.</p>
+    <form method="dialog"><button class="btn">Fechar</button></form>
+  </div>
+</dialog>
+
+<div class="consent" role="region" aria-label="Estatísticas de visita">
+  <p>Posso medir as visitas com o Umami, sem publicidade e com dados na UE? Ajuda-me a perceber o que é útil.</p>
+  <div class="row"><button class="btn" data-consent="yes">Aceitar</button><button class="btn line" data-consent="no">Recusar</button><button class="btn line" data-open-privacy>Saber mais</button></div>
+</div>
+
+<script src="/assets/site.js?v=20261124d" defer></script>
+<script>
+{
+  const ENDPOINT = "https://formsubmit.co/ajax/abd7c201b70eff5f47bd1645a8456f6d";
+  const PDF_URL = "https://silasmoreira.tech/o-cerebro-alugado/o-cerebro-alugado.pdf";
+  const CONSENT_TXT = "Pediu o e-book «O cérebro alugado» em silasmoreira.tech/o-cerebro-alugado/. Novidades por e-mail: ";
+  const f = document.getElementById("baixar"), msg = document.getElementById("eb-msg");
+  f.addEventListener("submit", async (ev) => {
+    ev.preventDefault();
+    if (!f.checkValidity()) { msg.textContent = "Preencha o nome e um e-mail válido."; f.reportValidity(); return; }
+    if (f._honey.value) return;
+    const btn = f.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = "Enviando…";
+    const novidades = f.novidades.checked ? "sim" : "não";
+    const data = {
+      nome: f.nome.value.trim(), email: f.email.value.trim(), novidades,
+      registo: CONSENT_TXT + novidades + ".", data_hora: new Date().toISOString(),
+      _subject: "E-book O cérebro alugado: novo download", _template: "table",
+      _autoresponse: "Olá! Aqui está o seu e-book O cérebro alugado: " + PDF_URL + " . Boa leitura. Silas Moreira"
+    };
+    try {
+      const r = await fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(data) });
+      if (!r.ok) throw new Error(String(r.status));
+    } catch (e) {
+      document.getElementById("eb-done-msg").textContent = "Seu e-book está pronto. Não conseguimos enviar o e-mail agora, mas você pode baixar aqui.";
+    }
+    f.classList.add("done");
+    if (window.umami) umami.track("ebook-download", { novidades });
+  });
+}
+</script>
+</body>
+</html>
