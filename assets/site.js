@@ -196,7 +196,7 @@
   const UMAMI_ID = document.documentElement.dataset.umami || '';
   const loadUmami = () => {
     if (!UMAMI_ID || document.getElementById('umami')) return;
-    const s = document.createElement('script'); s.id = 'umami'; s.defer = true; s.src = 'https://cloud.umami.is/script.js'; s.dataset.websiteId = UMAMI_ID; document.head.appendChild(s);
+    const s = document.createElement('script'); s.id = 'umami'; s.defer = true; s.src = 'https://cloud.umami.is/script.js'; s.dataset.websiteId = UMAMI_ID; s.dataset.domains = 'silasmoreira.tech'; document.head.appendChild(s);
   };
   const consent = $('.consent'), choice = store.get('sm-analytics');
   if (choice === 'yes') loadUmami(); else if (!choice && consent) setTimeout(() => consent.classList.add('show'), 1800);

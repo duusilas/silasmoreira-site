@@ -1,0 +1,12 @@
+# Nunca publicar segredos: o site é estático e tudo o que estiver aqui fica público.
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.p12
+secrets/
+secrets.*
+credentials*.json
+service-account*.json
+.DS_Store
