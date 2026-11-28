@@ -99,6 +99,8 @@
       const i = idx(), max = track.scrollWidth - track.clientWidth - 4;
       if (prev) prev.disabled = track.scrollLeft <= 4;
       if (next) next.disabled = track.scrollLeft >= max;
+      track.style.setProperty('--fl', track.scrollLeft > 4 ? 1 : 0);
+      track.style.setProperty('--fr', track.scrollLeft < max ? 1 : 0);
       if (dots) [...dots.children].forEach((d, k) => d.classList.toggle('on', k === i));
       if (count) count.textContent = `${String(i + 1).padStart(2, '0')} / ${String(items.length).padStart(2, '0')}`;
     };

@@ -875,3 +875,95 @@ html[lang="zh-Hans"] h1,html[lang="zh-Hans"] h2,html[lang="zh-Hans"] h3{letter-s
 .ebook-cta p{margin:0;color:rgba(255,255,255,.82)}
 .ebook-cta .go{background:var(--neon);color:var(--ink);font-weight:800;padding:.8rem 1.2rem;border-radius:999px;white-space:nowrap}
 @media (max-width:640px){.ebook-cta{grid-template-columns:auto minmax(0,1fr)}.ebook-cta .go{grid-column:1/-1;text-align:center}}
+
+/* ======================================================================
+   v4 — ajustes finos (28/11/2026)
+   10 detalhes que separam "feito à pressa" de "feito com cuidado".
+   Tudo aqui é progressivo: browsers antigos ficam com o que já havia.
+   ====================================================================== */
+
+/* 03 · paleta em OKLCH — os mesmos tons, numa escala que o olho percebe por igual */
+@supports (color:oklch(0% 0 0)){
+  :root{
+    --ink:oklch(23% .112 268.9);
+    --ink-2:oklch(39.8% .086 275);
+    --cobalt:oklch(48.2% .293 266.7);
+    --paper:oklch(97.7% .011 274.9);
+    --neon:oklch(87.9% .224 151.8);
+    --pink:oklch(66.5% .248 358.1);
+    --line:oklch(91.2% .025 275.9);
+  }
+  /* ecrãs P3 (iPhone, Mac, muitos Android): verde, rosa e azul mais vivos, sem sair da marca */
+  @media (color-gamut:p3){
+    :root{--neon:oklch(87.9% .27 151.8);--pink:oklch(66.5% .285 358.1);--cobalt:oklch(48.2% .31 266.7)}
+  }
+}
+/* camadas do escuro, derivadas do --ink (usadas no ajuste 08) */
+:root{
+  --ink-up1:#121C66;  /* superfície elevada */
+  --ink-up2:#1A2577;  /* hover / segunda camada */
+  --edge:rgba(10,18,80,.1);      /* 02 · borda transparente */
+  --edge-dark:rgba(255,255,255,.08);
+}
+@supports (color:oklch(0% 0 0)){
+  :root{--ink-up1:oklch(27.8% .128 269.4);--ink-up2:oklch(32% .13 270);--edge:oklch(23% .112 268.9 / .1);--edge-dark:oklch(100% 0 0 / .08)}
+}
+
+/* 01 · raio concêntrico — raio de dentro = raio de fora − espaçamento */
+.talk{--r:24px;--pad:.7rem;border-radius:var(--r);padding:var(--pad)}
+.talk-img{border-radius:calc(var(--r) - var(--pad))}
+.lang-dd .langs{--r:18px;--pad:.4rem;border-radius:var(--r);padding:var(--pad)}
+.lang-dd .langs .lang{border-radius:calc(var(--r) - var(--pad))}
+.orbit .card,.sticker{--r:18px}
+.orbit .card .tag,.sticker .tag{border-radius:calc(var(--r) - .5rem)}
+.ebook-cta{--r:28px}
+.tabpanel{--r:26px;border-radius:var(--r)}
+
+/* 02 · borda transparente — imagens e cartões flutuantes ganham contorno que se adapta a qualquer fundo */
+.pf img,.sat.s-f > span.face img,.then-now img,.duo img,.talk-img img,.topic-img img{outline:1px solid var(--edge);outline-offset:-1px}
+.orbit .card,.sticker,.consent{box-shadow:0 18px 40px -16px rgba(10,18,80,.35),inset 0 0 0 1px var(--edge)}
+.orbit .c2{box-shadow:0 18px 40px -16px rgba(10,18,80,.35),inset 0 0 0 1px var(--edge-dark)}
+.lang-dd .langs{box-shadow:0 0 0 1px var(--edge),0 18px 40px -12px rgba(10,18,80,.28)}
+
+/* 04 · degradês em OKLCH — sem a "zona cinzenta" a meio da transição */
+@supports (background:linear-gradient(in oklch,red,blue)){
+  .talk-img,.topic-img{background:linear-gradient(135deg in oklch,var(--cobalt),var(--pink))}
+  .talk:nth-child(2) .talk-img,.topic:nth-child(2) .topic-img{background:linear-gradient(135deg in oklch,var(--neon),var(--cobalt))}
+  .talk:nth-child(3) .talk-img,.topic:nth-child(3) .topic-img{background:linear-gradient(135deg in oklch,var(--pink),#FF8CC4)}
+  /* rosa → verde pelo caminho longo (magenta, azul, ciano): o curto passava pelo amarelo */
+  .meter i{background:linear-gradient(90deg in oklch longer hue,var(--pink),var(--neon))}
+}
+
+/* 05 · ícone no peso — o traço acompanha o peso do texto ao lado, em qualquer tamanho */
+:is(.btn,.link,.go,.case-link,.car-nav,.orb-bar,.lang-btn,.tcard .go,.acard .go) svg{--stroke:2px}
+.btn svg,.orb-bar svg{--stroke:2.25px}
+.lang-btn .chev{--stroke:2.25px}
+:is(.btn,.link,.go,.case-link,.car-nav,.orb-bar,.lang-btn) svg :is(path,line,polyline,polygon,circle,rect,ellipse){vector-effect:non-scaling-stroke;stroke-width:var(--stroke)}
+
+/* 06 · carrossel com máscara — o corte só aparece do lado onde ainda há conteúdo */
+.car-track{--fl:0;--fr:1;--fade:56px;
+  -webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,calc(1 - var(--fl))) 0,#000 var(--fade),#000 calc(100% - var(--fade)),rgba(0,0,0,calc(1 - var(--fr))) 100%);
+          mask-image:linear-gradient(90deg,rgba(0,0,0,calc(1 - var(--fl))) 0,#000 var(--fade),#000 calc(100% - var(--fade)),rgba(0,0,0,calc(1 - var(--fr))) 100%)}
+@media (max-width:640px){.car-track{--fade:28px}}
+
+/* 07 · desfoque na troca — conteúdo que muda entra focado, não "salta" */
+.rotator span{filter:blur(4px);transition:opacity .45s var(--ease),transform .45s var(--ease),filter .45s var(--ease)}
+.rotator span.on{filter:blur(0)}
+.tabpanel{animation:swapIn .45s var(--ease)}
+@keyframes swapIn{from{opacity:0;transform:translateY(10px);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
+
+/* 08 · profundidade no escuro — no fundo escuro, sobe-se clareando a superfície, não com sombra */
+.sec.ink :is(.path li,.steps li,.observe div){background:var(--ink-up1);box-shadow:inset 0 1px 0 var(--edge-dark),inset 0 0 0 1px rgba(255,255,255,.05);transition:background .25s}
+.sec.ink :is(.path li,.steps li,.observe div):hover{background:var(--ink-up2)}
+.sec.ink .direct :is(a,button){background:var(--ink-up1);box-shadow:inset 0 1px 0 var(--edge-dark)}
+.sec.ink .direct :is(a,button):hover{background:var(--ink-up2)}
+
+/* 09 · altura dinâmica — dvh respeita a barra do browser no telemóvel */
+.privacy-in{max-height:80vh;max-height:80dvh}
+dialog.privacy{max-height:calc(100vh - 2rem);max-height:calc(100dvh - 2rem)}
+.consent{max-height:calc(100dvh - 2rem);overflow:auto}
+
+/* 10 · fundo com multiply — grelha e órbitas "imprimem-se" sobre as luzes em vez de as lavar */
+.tech-bg:not(.ink)::before,.orbit .ring,.pf-ring{mix-blend-mode:multiply}
+
+@media (prefers-reduced-motion:reduce){.rotator span,.tabpanel{filter:none!important;animation:none}}
